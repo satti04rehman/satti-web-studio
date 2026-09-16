@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Satti Web Studio — Websites That Win Customers</title>
+<meta name="description" content="Satti Web Studio builds modern, mobile-friendly business websites and e-commerce stores across Pakistan. Delivered fast, starting at Rs. 25,000." />
+<meta property="og:title" content="Satti Web Studio — Websites That Win Customers" />
+<meta property="og:description" content="Business websites, e-commerce stores and landing pages. Designed in days, built to convert." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#F5F5F0" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5F5F0'/%3E%3Crect x='3' y='3' width='58' height='58' rx='12' fill='none' stroke='%231A1A1A' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%231A1A1A'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #F5F5F0;
+    --ink: #1A1A1A;
+    --muted: #6B6B6B;
+    --accent: #4A4A4A;
+    --surface: #EAEAE5;
+    --glass: rgba(0,0,0,.04);
+    --glass-border: rgba(0,0,0,.08);
+    --ok: #4A9E6B;
+    --radius: 18px;
+    --serif: "Fahkwang", Georgia, serif;
+    --sans: "Questrial", system-ui, -apple-system, sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:var(--sans);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection { background:var(--ink); color:#F5F5F0; }
+  a { color:inherit; }
+  :focus-visible { outline:2px dashed var(--accent); outline-offset:3px; border-radius:4px; }
+  section[id] { scroll-margin-top:96px; }
+  img, svg { display:inline-block; vertical-align:middle; }
+
+  .container { position:relative; z-index:2; max-width:1140px; margin:0 auto; padding:0 24px; }
+  .skip-link { position:absolute; left:-999px; top:0; background:var(--ink); color:#F5F5F0; padding:12px 20px; border-radius:0 0 12px 0; z-index:200; font-weight:600; }
+  .skip-link:focus { left:0; top:0; }
+
+  /* Scroll progress */
+  .sp{position:fixed;top:0;left:0;height:3px;width:0;z-index:999;background:linear-gradient(90deg,var(--accent),#666);box-shadow:0 0 12px rgba(0,0,0,.2)}
+
+  /* Header */
+  header { position:fixed; top:0; left:0; right:0; z-index:100; }
+  .nav {
+    position:relative; max-width:1100px; margin:0 auto; padding:0 24px; height:72px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand { font-family:var(--serif); font-size:22px; font-weight:600; text-decoration:none; letter-spacing:.5px; }
+  .nav-right { display:flex; align-items:center; gap:32px; }
+  .nav-links { display:flex; gap:28px; align-items:center; }
+  .nav-links a { text-decoration:none; font-size:15px; color:var(--muted); transition:color .2s; }
+  .nav-links a:hover { color:var(--ink); }
+  .nav-cta {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 24px; border-radius:999px;
+    font-weight:600; font-size:14px; text-decoration:none; cursor:pointer;
+    background:var(--ink); color:#F5F5F0;
+    border:none; transition:transform .15s, box-shadow .2s;
+    font-family:var(--sans);
+  }
+  .nav-cta:active { transform:scale(.97); }
+  .nav-cta:hover { box-shadow:0 8px 24px rgba(0,0,0,.25); }
+
+  .menu-btn {
+    display:none; appearance:none; background:none; border:1px solid var(--glass-border); border-radius:12px;
+    width:44px; height:44px; flex:none; cursor:pointer; flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  }
+  .menu-btn span { display:block; width:18px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s, opacity .25s; }
+  .menu-btn[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .menu-btn[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  /* Buttons */
+  .btn {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 26px; border-radius:999px;
+    font-weight:600; font-size:15px; text-decoration:none; cursor:pointer;
+    border:1px solid transparent; transition:transform .15s, box-shadow .2s;
+    font-family:var(--sans);
+  }
+  .btn:active { transform:scale(.97); }
+  .btn-primary { background:var(--ink); color:#F5F5F0; }
+  .btn-primary:hover { box-shadow:0 8px 24px rgba(0,0,0,.25); }
+  .btn-outline { background:transparent; border:1px solid var(--glass-border); color:var(--ink); }
+  .btn-outline:hover { border-color:var(--ink); }
+  .btn .barr { transition:transform .2s; }
+  .btn:hover .barr { transform:translateX(3px); }
+
+  /* Hero */
+  .hero {
+    background:var(--ink); color:#F5F5F0;
+    padding:160px 0 100px; text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255,255,255,.08), transparent 70%);
+    pointer-events:none;
+  }
+  .hero h1 {
+    font-family:var(--serif);
+    font-size:clamp(36px,5.5vw,64px);
+    font-weight:600; line-height:1.1; letter-spacing:-.5px;
+    max-width:700px; margin:0 auto 24px; text-wrap:balance;
+    color:#F5F5F0;
+  }
+  .hero p.lead {
+    max-width:560px; margin:0 auto 36px;
+    font-size:clamp(15px,1.8vw,18px); color:rgba(245,245,240,.65); line-height:1.7;
+  }
+  .hero-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .hero-actions .btn-primary { background:#F5F5F0; color:var(--ink); }
+  .hero-actions .btn-primary:hover { box-shadow:0 8px 24px rgba(245,245,240,.3); }
+  .hero-actions .btn-outline { border-color:rgba(245,245,240,.3); color:#F5F5F0; }
+  .hero-actions .btn-outline:hover { border-color:#F5F5F0; }
+
+  /* Word reveal */
+  .word { display:inline-block; overflow:hidden; vertical-align:bottom; }
+  .word > span { display:inline-block; transform:translateY(110%); animation:rise .7s cubic-bezier(.22,1,.36,1) forwards; }
+  .word + .space { display:inline-block; width:.27em; }
+  @keyframes rise { to { transform:translateY(0); } }
+
+  /* Section basics */
+  section { position:relative; z-index:2; padding:clamp(72px,8vw,110px) 0; border-top:1px solid var(--glass-border); }
+  .sec-head { max-width:700px; margin-bottom:54px; }
+  .sec-head h2 {
+    font-family:var(--serif); font-size:clamp(30px,4.2vw,44px); font-weight:600; line-height:1.15;
+    margin-bottom:16px; text-wrap:balance;
+  }
+  .sec-head p { color:var(--muted); font-size:16px; }
+  .sec-head .kicker { font-size:12px; font-weight:600; letter-spacing:3.2px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:12px; }
+
+  /* Divider line */
+  .divider { height:1px; background:var(--glass-border); margin:48px 0; }
+
+  /* About section */
+  .about-intro { max-width:700px; margin-bottom:20px; }
+  .about-intro h2 { font-family:var(--serif); font-size:clamp(30px,4.2vw,44px); font-weight:600; line-height:1.15; margin-bottom:16px; text-wrap:balance; }
+  .about-intro p { color:var(--muted); font-size:16px; margin-bottom:24px; }
+
+  .about-band { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:clamp(48px,5vw,72px); }
+  .about-band h3 { font-family:var(--serif); font-size:clamp(24px,3.2vw,36px); font-weight:600; line-height:1.15; margin-bottom:16px; text-wrap:balance; }
+  .about-band p { color:var(--muted); font-size:15px; margin-bottom:14px; }
+  .about-img {
+    border-radius:var(--radius); overflow:hidden; aspect-ratio:490/571;
+    background:var(--surface);
+  }
+  .about-photo { width:100%; height:100%; object-fit:cover; display:block; }
+  .about-img-inner {
+    width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:linear-gradient(160deg, var(--surface), rgba(0,0,0,.03));
+    padding:32px; text-align:center;
+  }
+  .about-img-inner .mock-device {
+    width:80%; max-width:200px; aspect-ratio:3/4; border-radius:12px;
+    background:var(--ink); display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:8px; padding:20px; margin-bottom:16px;
+  }
+  .about-img-inner .mock-device .bar { width:40%; height:4px; border-radius:2px; background:rgba(245,245,240,.3); }
+  .about-img-inner .mock-device .block { width:60%; height:6px; border-radius:3px; background:var(--accent); }
+  .about-img-inner .mock-device .dots { display:flex; gap:4px; }
+  .about-img-inner .mock-device .dots span { width:8px; height:8px; border-radius:50%; background:rgba(245,245,240,.25); }
+  .about-img-inner .mock-device .dots span.on { background:var(--accent); }
+  .about-img-inner .caption { font-size:12px; color:var(--muted); max-width:180px; }
+
+  .about-img-rev { background:linear-gradient(160deg, rgba(74,74,74,.06), var(--surface)); }
+  .about-img-rev .mock-device { background:linear-gradient(160deg, #26262a, #333338); }
+  .about-img-rev .mock-device .bar { background:rgba(245,245,240,.2); }
+  .about-img-rev .mock-device .block { background:#F5F5F0; }
+
+  /* Portfolio */
+  .portfolio-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
+  .portfolio-header h3 { font-family:var(--serif); font-size:clamp(28px,3.8vw,40px); font-weight:600; }
+
+  .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .gallery-item {
+    position:relative; border-radius:var(--radius); overflow:hidden;
+    aspect-ratio:16/10; cursor:pointer; background:var(--surface);
+  }
+  .gallery-item .thumb { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+  .gallery-item .mock-screen {
+    width:100%; height:100%; display:flex; flex-direction:column; padding:20px; gap:8px;
+  }
+  .gallery-item .mock-screen .bar { display:flex; gap:4px; }
+  .gallery-item .mock-screen .bar span { width:8px; height:8px; border-radius:50%; }
+  .gallery-item .mock-screen .bar span:nth-child(1){background:#E56B5F}.gallery-item .mock-screen .bar span:nth-child(2){background:#E4BE5B}.gallery-item .mock-screen .bar span:nth-child(3){background:#68B26D}
+  .gallery-item .mock-screen .title { font-family:var(--serif); font-size:clamp(16px,2vw,22px); font-weight:600; margin:auto 0 12px; }
+  .gallery-item .mock-screen .chips { display:flex; gap:6px; flex-wrap:wrap; }
+  .gallery-item .mock-screen .chip { font-size:9px; padding:4px 10px; border-radius:999px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.8); }
+
+  /* Mock screens */
+  .mock-skyline { background:linear-gradient(160deg,#26262a,#111114); color:#E8E8E5; }
+  .mock-skyline .bar span { border:1px solid rgba(255,255,255,.4); }
+  .mock-skyline .bar span.on { background:#F5F5F0 !important; border-color:#F5F5F0; }
+  .mock-skyline .chips .chip { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); color:#E8E8E5; }
+
+  .mock-clinic { background:linear-gradient(150deg,#062E2C,#0B5350); color:#E7F6F3; }
+  .mock-clinic .bar span { border:1px solid rgba(127,216,207,.4); }
+  .mock-clinic .bar span.on { background:var(--ok) !important; border-color:var(--ok); }
+  .mock-clinic .chips .chip { background:rgba(127,216,207,.15); border-color:rgba(127,216,207,.3); color:#7FD8CF; }
+
+  .mock-academy { background:linear-gradient(150deg,#EEF0FF,#F8F1FF); color:#191233; }
+  .mock-academy .bar span { border:1px solid #D8DBF5; }
+  .mock-academy .bar span.on { background:var(--accent) !important; border-color:var(--accent); }
+  .mock-academy .chips .chip { background:#fff; border-color:#D8DBF5; color:#191233; }
+
+  .mock-tc { background:linear-gradient(160deg,#16130E,#0A0907); color:#F4EFE6; }
+  .mock-tc .bar span { border:1px solid rgba(169,123,44,.4); }
+  .mock-tc .bar span.on { background:var(--accent) !important; border-color:var(--accent); }
+  .mock-tc .chips .chip { background:rgba(169,123,44,.15); border-color:rgba(169,123,44,.3); color:#F4EFE6; }
+
+  /* Gallery overlay */
+  .gallery-item .overlay {
+    position:absolute; inset:0; background:rgba(26,26,26,.8);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    opacity:0; transition:opacity .3s; padding:20px; text-align:center;
+  }
+  .gallery-item:hover .overlay { opacity:1; }
+  .overlay h4 { font-family:var(--serif); font-size:20px; color:#F5F5F0; margin-bottom:6px; }
+  .overlay p { font-size:13px; color:rgba(245,245,240,.7); margin-bottom:16px; }
+  .overlay .btn { font-size:13px; padding:10px 20px; }
+
+  /* Contact */
+  .contact-section {
+    position:relative; overflow:hidden;
+    background:linear-gradient(180deg, var(--ink), #222);
+    color:#F5F5F0;
+  }
+  .contact-section::before {
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(ellipse 70% 50% at 30% 60%, rgba(255,255,255,.05), transparent 70%);
+    pointer-events:none;
+  }
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; position:relative; z-index:2; }
+  .contact-grid h2 { font-family:var(--serif); font-size:clamp(28px,3.8vw,40px); font-weight:600; line-height:1.15; margin-bottom:18px; text-wrap:balance; }
+  .contact-grid .sub { color:rgba(245,245,240,.65); margin-bottom:28px; }
+
+  form.contact-form { display:grid; gap:16px; }
+  .field { display:grid; gap:6px; }
+  .field label { font-size:13px; font-weight:600; color:rgba(245,245,240,.55); }
+  .field input, .field select, .field textarea {
+    font-family:var(--sans); font-size:14px; padding:12px 14px;
+    border:1px solid rgba(245,245,240,.15); border-radius:10px;
+    background:rgba(245,245,240,.08); color:#F5F5F0;
+    transition:border-color .2s;
+  }
+  .field input::placeholder, .field textarea::placeholder { color:rgba(245,245,240,.35); }
+  .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:rgba(245,245,240,.5); }
+  .field select option { background:var(--ink); color:#F5F5F0; }
+  form .btn { justify-self:start; }
+  .form-note { font-size:12px; color:rgba(245,245,240,.45); }
+
+  /* Footer */
+  footer {
+    position:relative; z-index:2; background:var(--ink); color:#F5F5F0;
+    border-top:1px solid rgba(245,245,240,.08);
+  }
+  .footer-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:48px; padding:clamp(48px,5vw,72px) 0; }
+  .footer-left .brand { font-size:24px; margin-bottom:16px; display:inline-block; color:#F5F5F0; }
+  .footer-left .contact-line { display:flex; gap:10px; align-items:center; font-size:14px; color:rgba(245,245,240,.6); margin-bottom:8px; }
+  .footer-left .contact-line svg { flex:none; width:16px; height:16px; opacity:.5; }
+  .footer-socials { display:flex; gap:12px; margin-top:20px; }
+  .footer-socials a {
+    width:38px; height:38px; border-radius:50%; border:1px solid rgba(245,245,240,.15);
+    display:flex; align-items:center; justify-content:center; color:rgba(245,245,240,.6);
+    transition:border-color .2s, color .2s; text-decoration:none;
+  }
+  .footer-socials a:hover { border-color:#F5F5F0; color:#F5F5F0; }
+  .footer-right h4 { font-family:var(--serif); font-size:20px; margin-bottom:16px; }
+  .footer-right .newsletter { display:flex; gap:8px; }
+  .footer-right .newsletter input {
+    flex:1; font-family:var(--sans); font-size:14px; padding:12px 14px;
+    border:1px solid rgba(245,245,240,.15); border-radius:10px;
+    background:rgba(245,245,240,.08); color:#F5F5F0;
+  }
+  .footer-right .newsletter input::placeholder { color:rgba(245,245,240,.35); }
+  .footer-right .newsletter input:focus { outline:none; border-color:rgba(245,245,240,.5); }
+  .footer-right .newsletter button {
+    padding:12px 20px; border-radius:10px; border:none;
+    background:rgba(245,245,240,.9); color:var(--ink); font-family:var(--sans); font-weight:600; font-size:14px; cursor:pointer;
+  }
+  .footer-bottom { border-top:1px solid rgba(245,245,240,.08); padding:20px 0; text-align:center; font-size:13px; color:rgba(245,245,240,.4); }
+
+  /* Floating WA */
+  .wa-fab {
+    position:fixed; right:22px; bottom:22px; z-index:120;
+    width:58px; height:58px; border-radius:50%;
+    background:linear-gradient(135deg,#2BCC78,#25D366); color:#fff; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 30px rgba(37,211,102,.35); text-decoration:none; transition:transform .2s;
+  }
+  .wa-fab:hover { transform:scale(1.08); }
+
+  /* Reveal */
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity:1; transform:none; }
+
+  /* Process */
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .step { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); padding:28px; position:relative; }
+  .step::before { counter-increment:step; content:"0" counter(step); font-family:var(--serif); font-size:15px; color:var(--accent); font-weight:600; display:block; margin-bottom:16px; }
+  .step h3 { font-size:16px; font-weight:600; margin-bottom:8px; }
+  .step p { font-size:13px; color:var(--muted); }
+  .step .day { display:inline-block; margin-top:14px; font-size:12px; font-weight:600; color:#333; background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.12); padding:4px 10px; border-radius:6px; }
+
+  /* Quote builder */
+  .bld-grid { display:grid; grid-template-columns:1.25fr .85fr; gap:28px; align-items:start; }
+  .bld-controls { display:grid; gap:22px; }
+  .bld-group { border:1px solid var(--glass-border); background:var(--glass); border-radius:var(--radius); padding:24px 24px 22px; display:grid; gap:16px; min-width:0; }
+  .bld-group legend { font-size:13px; font-weight:600; letter-spacing:.6px; color:var(--accent); }
+  .bld-group legend small { color:var(--muted); font-weight:400; letter-spacing:0; display:block; margin-top:2px; }
+  .bld-row { display:grid; gap:12px; }
+  .bld-row.cols { grid-template-columns:repeat(3,1fr); }
+  .pc { position:relative; display:flex; flex-direction:column; gap:3px; border:1px solid var(--glass-border); border-radius:14px; padding:16px 16px 14px; cursor:pointer; transition:border-color .15s, background .15s, transform .15s; }
+  .pc:hover { border-color:rgba(0,0,0,.25); transform:translateY(-2px); }
+  .pc input { position:absolute; opacity:0; pointer-events:none; }
+  .pc:has(input:checked) { border-color:var(--ink); background:rgba(0,0,0,.04); }
+  .pc .pc-icon { width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:11px; background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.12); color:var(--ink); margin-bottom:8px; }
+  .pc .pc-name { font-size:14px; font-weight:600; }
+  .pc .pc-price { font-family:var(--serif); font-size:17px; color:var(--accent); }
+  .pc .pc-sub { font-size:12px; color:var(--muted); }
+  .stepper { display:flex; align-items:center; gap:16px; }
+  .stepper button { width:42px; height:42px; border-radius:12px; border:1px solid var(--glass-border); background:rgba(255,255,255,.8); color:var(--ink); font-size:22px; line-height:1; cursor:pointer; transition:border-color .15s, color .15s; }
+  .stepper button:hover { border-color:var(--accent); color:var(--accent); }
+  .stepper #pagesCount { min-width:26px; text-align:center; font-family:var(--serif); font-size:24px; color:var(--accent); }
+  .stepper .stepper-note { color:var(--muted); font-size:13px; }
+  .bld-group.dim { opacity:.45; pointer-events:none; }
+  .ac { display:flex; align-items:center; gap:12px; border:1px solid var(--glass-border); border-radius:14px; padding:14px 16px; cursor:pointer; transition:border-color .15s, background .15s; font-size:14px; }
+  .ac:hover { border-color:rgba(0,0,0,.25); }
+  .ac input { position:absolute; opacity:0; pointer-events:none; }
+  .ac .ac-dot { width:20px; height:20px; flex:none; border-radius:6px; border:1px solid var(--glass-border); background:rgba(0,0,0,.04); display:flex; align-items:center; justify-content:center; color:transparent; font-size:13px; font-weight:700; transition:all .15s; }
+  .ac:has(input:checked) { border-color:var(--ink); background:rgba(0,0,0,.05); }
+  .ac:has(input:checked) .ac-dot { background:var(--ink); border-color:var(--ink); color:#F5F5F0; }
+  .ac b { margin-left:auto; color:var(--accent); font-weight:600; white-space:nowrap; font-size:13.5px; }
+
+  .bld-summary { position:sticky; top:96px; background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); padding:26px; display:grid; gap:14px; align-content:start; }
+  .bld-summary h3 { font-family:var(--serif); font-size:20px; border-bottom:1px solid var(--glass-border); padding-bottom:13px; }
+  #sumLines { list-style:none; display:grid; gap:10px; }
+  #sumLines li { display:flex; justify-content:space-between; gap:12px; font-size:14px; }
+  #sumLines li span.price { color:var(--accent); font-weight:600; white-space:nowrap; }
+  #sumLines li.dim { color:var(--muted); font-size:12.5px; }
+  .sum-total { display:flex; justify-content:space-between; align-items:baseline; gap:12px; border-top:1px solid var(--glass-border); padding-top:15px; font-size:14px; }
+  .sum-total strong { font-family:var(--serif); font-size:30px; color:var(--accent); letter-spacing:-.3px; }
+  .sum-note { font-size:12.5px; color:var(--muted); }
+  .bld-btn { justify-content:center; }
+  .bld-offers { display:grid; gap:6px; }
+  .bld-offers li { list-style:none; font-size:12.5px; color:var(--muted); display:flex; gap:8px; }
+  .bld-offers li::before { content:"\2713"; color:var(--accent); font-weight:700; }
+
+  /* Services */
+  .serv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .serv-card {
+    background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius);
+    padding:32px; position:relative; transition:transform .2s, box-shadow .2s, border-color .2s; overflow:hidden;
+  }
+  .serv-card:hover { transform:translateY(-5px); border-color:rgba(0,0,0,.2); box-shadow:0 20px 60px rgba(0,0,0,.08); }
+  .serv-card .icon { width:50px; height:50px; margin-bottom:16px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.12); border-radius:14px; color:var(--ink); }
+  .serv-card h3 { font-family:var(--serif); font-size:22px; font-weight:600; }
+  .serv-card p { font-size:14px; color:var(--muted); margin:10px 0 18px; }
+  .serv-price { font-size:14px; font-weight:600; }
+  .serv-price small { color:var(--muted); font-weight:400; }
+  .serv-card.popular { border-color:rgba(0,0,0,.3); }
+  .ribbon { position:absolute; top:-12px; right:20px; background:var(--ink); color:#F5F5F0; font-size:11px; font-weight:700; padding:5px 14px; border-radius:999px; z-index:2; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    .word > span, .reveal, .gallery-item .overlay { transition:none !important; }
+    .word > span { transform:none; }
+    .reveal { opacity:1; transform:none; }
+  }
+
+  @media (max-width:900px) {
+    .about-band, .contact-grid, .bld-grid, .footer-grid { grid-template-columns:1fr; gap:36px; }
+    .bld-summary { position:static; }
+    .gallery { grid-template-columns:1fr 1fr; }
+    .serv-grid { grid-template-columns:1fr 1fr; }
+    .steps { grid-template-columns:1fr 1fr; }
+    .nav-links {
+      display:none; position:absolute; top:calc(100% + 10px); left:12px; right:12px;
+      flex-direction:column; align-items:stretch; gap:4px;
+      background:rgba(245,245,240,.97); border:1px solid var(--glass-border); border-radius:18px;
+      padding:14px; box-shadow:0 20px 60px rgba(0,0,0,.1);
+    }
+    .nav-links.open { display:flex; }
+    .nav-links a { padding:11px 14px; font-size:15px; border-radius:10px; }
+    .nav-links a:hover { background:var(--glass); }
+    .nav-links .nav-cta { justify-content:center; margin-top:6px; }
+    .menu-btn { display:inline-flex; }
+  }
+  @media (max-width:560px) {
+    .gallery, .serv-grid, .steps { grid-template-columns:1fr; }
+    .bld-row.cols { grid-template-columns:1fr; }
+    .hero { padding:130px 0 70px; }
+  }
+</style>
+</head>
+<body>
+<div class="sp" id="sp" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="#top">Satti Web Studio</a>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#builder">Quote</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Get in Touch</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <h1 aria-label="Websites that turn browsers into buyers.">
+        <span class="word"><span>Websites</span></span><span class="space"></span>
+        <span class="word"><span>that</span></span><span class="space"></span>
+        <span class="word"><span>turn</span></span><span class="space"></span>
+        <span class="word"><span>careful</span></span><br>
+        <span class="word"><span>browsers</span></span><span class="space"></span>
+        <span class="word"><span>into</span></span><span class="space"></span>
+        <span class="word"><span>buyers.</span></span>
+      </h1>
+      <p class="lead">With a proven track record in building modern, mobile-first business websites and e-commerce stores, Satti Web Studio is dedicated to delivering exceptional results through meticulous planning, creative design, and seamless execution.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#builder">Build my free quote <span class="barr">&rarr;</span></a>
+        <a class="btn btn-outline" href="#work">See my work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-intro reveal">
+        <h2>About</h2>
+        <p>Satti Web Studio is a seasoned web development practice renowned for expertly handling complex projects from inception to completion &mdash; delivering websites that win customers, not just look pretty.</p>
+        <a class="btn btn-primary" href="#work">My Work <span class="barr">&rarr;</span></a>
+      </div>
+      <div class="divider"></div>
+
+      <div class="about-band reveal">
+        <div>
+          <h3>The drive behind Satti Web Studio</h3>
+          <p>With years of experience across diverse industries, Abdul Rehman Satti has successfully led high-profile projects, ensuring seamless execution while maintaining artistic integrity and strategic vision.</p>
+          <p>His ability to navigate challenges, optimize workflows, and foster strong collaboration has earned him a reputation as a trusted leader in the field of web development.</p>
+          <p>With a strong focus on mobile-first design, performance, and conversion, every project is a testament to excellence and creativity in the field of production.</p>
+        </div>
+        <div class="about-img">
+          <img src="me.jpg" alt="Abdul Rehman Satti" class="about-photo" referrerpolicy="no-referrer" />
+        </div>
+      </div>
+
+      <div class="about-band reveal" style="margin-top:clamp(48px,5vw,72px);">
+        <div class="about-img about-img-rev">
+          <div class="about-img-inner">
+            <div class="mock-device">
+              <div class="bar"></div>
+              <div class="block"></div>
+              <div class="dots"><span class="on"></span><span></span><span></span></div>
+            </div>
+            <p class="caption">Every page tested on real phones before launch.</p>
+          </div>
+        </div>
+        <div>
+          <h3>Delivering impactful &amp; engaging content</h3>
+          <p>We craft websites that not only capture attention but also drive meaningful engagement with your audience &mdash; turning visitors into paying customers.</p>
+          <p>From landing pages to full e-commerce stores, every build is optimized for speed, mobile screens, and WhatsApp-first communication that Pakistani businesses actually use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="work">
+    <div class="container">
+      <div class="portfolio-header reveal">
+        <h3>Portfolio</h3>
+        <a class="btn btn-outline" href="#work">See More <span class="barr">&rarr;</span></a>
+      </div>
+      <div class="divider"></div>
+
+      <div class="gallery">
+        <div class="gallery-item reveal">
+          <img class="thumb" src="project-timecart.jpg" alt="TimeCart homepage" loading="lazy" />
+          <div class="overlay">
+            <h4>TimeCart</h4>
+            <p>Full-stack watch e-commerce store &mdash; catalog, cart, checkout, admin panel</p>
+            <a class="btn btn-primary" href="https://timecart-hh5m.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img class="thumb" src="project-skyline.jpg" alt="Skyline Realty homepage" loading="lazy" />
+          <div class="overlay">
+            <h4>Skyline Realty</h4>
+            <p>Multi-page real estate website with buy/rent search and listings</p>
+            <a class="btn btn-primary" href="https://skyline-realty-nu.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img class="thumb" src="project-carewell.jpg" alt="CareWell Clinic homepage" loading="lazy" />
+          <div class="overlay">
+            <h4>CareWell Clinic</h4>
+            <p>Clinic website with departments, doctor profiles and WhatsApp booking</p>
+            <a class="btn btn-primary" href="https://carewell-clinic-one.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img class="thumb" src="project-brightminds.jpg" alt="BrightMinds Academy homepage" loading="lazy" />
+          <div class="overlay">
+            <h4>BrightMinds Academy</h4>
+            <p>Education website with programs, mentor profiles and online admission</p>
+            <a class="btn btn-primary" href="https://brightminds-academy-green.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img class="thumb" src="project-ironforge-gym.jpg" alt="IronForge Fitness website homepage" loading="lazy" />
+          <div class="overlay">
+            <h4>IronForge Fitness</h4>
+            <p>Multi-page gym business website &mdash; programs, pricing, trainers, contact</p>
+            <a class="btn btn-primary" href="https://gym-lovat-three.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal">
+          <img class="thumb" src="project-ironforge-gymlanding.jpg" alt="IronForge Fitness landing page" loading="lazy" />
+          <div class="overlay">
+            <h4>IronForge Landing</h4>
+            <p>Single-page gym trial landing &mdash; pricing, testimonials, WhatsApp lead capture</p>
+            <a class="btn btn-primary" href="https://gym-landing-theta-seven.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Services</span>
+        <h2>Simple pricing, no surprises.</h2>
+        <p>Pick the package that fits. Every site is mobile-ready, search-engine friendly and connected to WhatsApp so customers can reach you instantly.</p>
+      </div>
+      <div class="serv-grid">
+        <article class="serv-card reveal">
+          <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+          <h3>Landing Page</h3>
+          <p>A single conversion-focused page for promotions, products or campaigns. Live within days.</p>
+          <div class="serv-price">From Rs. 12,000 <small>/ delivered in 2&ndash;3 days</small></div>
+        </article>
+        <article class="serv-card popular reveal">
+          <span class="ribbon">Most popular</span>
+          <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
+          <h3>Business Website</h3>
+          <p>Up to 5 pages: home, about, services, gallery, contact. The professional online presence every business needs.</p>
+          <div class="serv-price">From Rs. 25,000 <small>/ delivered in 3&ndash;5 days</small></div>
+        </article>
+        <article class="serv-card reveal">
+          <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
+          <h3>E-Commerce Store</h3>
+          <p>A full online store &mdash; products, cart, checkout (COD &amp; bank transfer), order tracking, admin panel.</p>
+          <div class="serv-price">From Rs. 60,000 <small>/ delivered in 7&ndash;10 days</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BUILDER -->
+  <section id="builder">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Instant quote &middot; no sign-up</span>
+        <h2>Build your website quote in 10 seconds.</h2>
+        <p>Pick what you need, watch the price update live, and send the quote straight to my WhatsApp. No email, no forms, no commitment.</p>
+      </div>
+      <div class="bld-grid reveal">
+        <div class="bld-controls">
+          <fieldset class="bld-group">
+            <legend>1 &middot; What are you building?</legend>
+            <div class="bld-row cols" id="typeRow">
+              <label class="pc"><input type="radio" name="type" value="landing" /><span class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span class="pc-name">Landing page</span><span class="pc-price">Rs. 12,000</span><span class="pc-sub">1 page &middot; 2&ndash;3 days</span></label>
+              <label class="pc"><input type="radio" name="type" value="business" checked /><span class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span><span class="pc-name">Business website</span><span class="pc-price">Rs. 25,000</span><span class="pc-sub">5 pages &middot; 3&ndash;5 days</span></label>
+              <label class="pc"><input type="radio" name="type" value="ecommerce" /><span class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><span class="pc-name">E-commerce store</span><span class="pc-price">Rs. 60,000</span><span class="pc-sub">store + admin &middot; 7&ndash;10 days</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="bld-group" id="pagesGroup">
+            <legend>2 &middot; Extra pages <small>Business websites already include 5 pages</small></legend>
+            <div class="stepper">
+              <button id="decPages" aria-label="Remove an extra page">&minus;</button>
+              <span id="pagesCount" aria-live="polite">0</span>
+              <button id="incPages" aria-label="Add an extra page">+</button>
+              <span class="stepper-note">&times; Rs. 3,500 per page</span>
+            </div>
+          </fieldset>
+          <fieldset class="bld-group">
+            <legend>3 &middot; Add-ons</legend>
+            <div class="bld-row" id="addonsRow">
+              <label class="ac"><input type="checkbox" data-label="WhatsApp ordering / booking" data-price="3000" /><span class="ac-dot">&#10003;</span><span>WhatsApp ordering / booking</span><b>+Rs. 3,000</b></label>
+              <label class="ac"><input type="checkbox" data-label="SEO + Google analytics setup" data-price="3000" /><span class="ac-dot">&#10003;</span><span>SEO + Google analytics setup</span><b>+Rs. 3,000</b></label>
+              <label class="ac"><input type="checkbox" data-label="Bilingual (Urdu / English) content" data-price="4000" /><span class="ac-dot">&#10003;</span><span>Bilingual (Urdu / English) content</span><b>+Rs. 4,000</b></label>
+              <label class="ac"><input type="checkbox" data-label="Priority 48-hour delivery" data-price="5000" /><span class="ac-dot">&#10003;</span><span>Priority 48-hour delivery</span><b>+Rs. 5,000</b></label>
+            </div>
+          </fieldset>
+        </div>
+        <aside class="bld-summary">
+          <h3>Your quote</h3>
+          <ul id="sumLines" aria-live="polite"></ul>
+          <div class="sum-total"><span>Total</span><strong id="sumTotal">Rs. 25,000</strong></div>
+          <ul class="bld-offers">
+            <li>Free design preview before any payment</li>
+            <li>Mobile-perfect build, tested on real phones</li>
+            <li>WhatsApp chat button on your site</li>
+            <li>First month of support included</li>
+          </ul>
+          <a class="btn btn-primary bld-btn" id="quoteBtn" href="#" target="_blank" rel="noopener">Send this quote on WhatsApp <span class="barr">&rarr;</span></a>
+          <p class="sum-note">Final price is always confirmed with you on WhatsApp &mdash; no hidden surprises.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Process</span>
+        <h2>From idea to live site, in days.</h2>
+      </div>
+      <div class="steps" style="counter-reset:step;">
+        <div class="step reveal"><h3>Discover</h3><p>We talk on WhatsApp. I learn your business, your customers and your goal for the site.</p><span class="day">Day 1 &middot; 30 min</span></div>
+        <div class="step reveal"><h3>Design preview</h3><p>You see a design of your site before any development. We refine until you love it.</p><span class="day">Day 1&ndash;2</span></div>
+        <div class="step reveal"><h3>Build</h3><p>I develop and test every page, make it mobile-perfect and fast, and wire up WhatsApp/contact.</p><span class="day">Day 2&ndash;4</span></div>
+        <div class="step reveal"><h3>Launch &amp; support</h3><p>Your site goes live with your own web address. I stay available on WhatsApp after launch.</p><span class="day">Day 3&ndash;5</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <h2>Get in Touch</h2>
+          <p class="sub">Whether you're looking to collaborate on an exciting project, discuss creative ideas, or simply connect, I'd love to hear from you.</p>
+          <a class="btn btn-primary" href="https://wa.me/923165661622" target="_blank" rel="noopener" style="background:#F5F5F0;color:var(--ink);margin-bottom:28px;">Chat on WhatsApp <span class="barr">&rarr;</span></a>
+        </div>
+        <form class="contact-form reveal" onsubmit="sendWa(event)">
+          <div class="field">
+            <label for="fname">First name</label>
+            <input id="fname" name="fname" type="text" required autocomplete="given-name" placeholder="e.g. Ali" />
+          </div>
+          <div class="field">
+            <label for="lname">Last name</label>
+            <input id="lname" name="lname" type="text" required autocomplete="family-name" placeholder="e.g. Ahmed" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="e.g. ali@example.com" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 0300 1234567" />
+          </div>
+          <div class="field">
+            <label for="msg">Message</label>
+            <textarea id="msg" name="msg" rows="4" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send via WhatsApp <span class="barr">&rarr;</span></button>
+          <p class="form-note">Your message opens in WhatsApp &mdash; no forms lost, no spam.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <a class="brand" href="#top">Satti Web Studio</a>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.23a2 2 0 0 1 2.11-.45c.85.32 1.73.54 2.63.66A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+92 316 566 1622</span>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span>satti04rehman@gmail.com</span>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Pakistan &middot; Serving clients nationwide</span>
+        </div>
+        <div class="footer-socials">
+          <a href="https://wa.me/923165661622" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.5.7-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.1.1.8-.1 1.3z"/></svg></a>
+          <a href="https://github.com/satti04rehman" target="_blank" rel="noopener" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h4>Stay Connected with Us</h4>
+        <div class="newsletter">
+          <input type="email" placeholder="Enter your email" aria-label="Email for newsletter" />
+          <button type="button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Abdul Rehman Satti &middot; Satti Web Studio &middot; Pakistan</div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/923165661622" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.5.7-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.1.1.8-.1 1.3z"/></svg>
+</a>
+
+<script>
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Mobile menu
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  const linkItems = navLinks.querySelectorAll("a");
+  function closeMenu() { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+  menuBtn.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  linkItems.forEach((a) => a.addEventListener("click", closeMenu));
+  window.addEventListener("resize", () => { if (window.innerWidth > 900) closeMenu(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // Stagger grids
+  document.querySelectorAll(".gallery, .serv-grid, .steps").forEach((g) =>
+    [...g.children].forEach((el, i) => { if (el.classList.contains("reveal")) el.style.transitionDelay = (i * 80) + "ms"; })
+  );
+
+  // Scroll progress bar
+  const sp = document.getElementById("sp");
+  const onScroll = () => {
+    const h = document.documentElement;
+    if (sp) sp.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+  };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  // Word reveal
+  if (!reduceMotion) {
+    document.querySelectorAll(".hero h1 .word > span").forEach((s, i) => {
+      s.style.animationDelay = `${0.15 + i * 0.08}s`;
+    });
+  }
+
+  // Contact form → WhatsApp
+  function sendWa(e) {
+    e.preventDefault();
+    const fname = e.target.fname.value.trim();
+    const lname = e.target.lname.value.trim();
+    const email = e.target.email.value.trim();
+    const phone = e.target.phone.value.trim();
+    const msg = e.target.msg.value.trim();
+    const name = `${fname} ${lname}`.trim();
+    const text = `Hello Satti Web Studio!%0A%0AI'm ${encodeURIComponent(name)} (${encodeURIComponent(email)})${phone ? '%0APhone: ' + encodeURIComponent(phone) : ''}.%0A%0A${encodeURIComponent(msg)}`;
+    window.open(`https://wa.me/923165661622?text=${text}`, "_blank");
+  }
+
+  // ---------- Quote builder ----------
+  const BLD = {
+    P: { landing: 12000, business: 25000, ecommerce: 60000 },
+    NAME: { landing: "Landing page", business: "Business website", ecommerce: "E-commerce store" },
+    PAGE: { landing: "1 page", business: "5 pages", ecommerce: "Full store + admin" },
+    DAYS: { landing: "2–3 days", business: "3–5 days", ecommerce: "7–10 days" },
+    EXTRA: 3500,
+  };
+  const state = { type: "business", pages: 0, addons: [] };
+  const fmtMoney = (n) => "Rs. " + n.toLocaleString("en-PK");
+  let prevTotal = 25000;
+
+  function bldBase() { return BLD.P[state.type]; }
+  function bldPagesCost() { return state.type === "business" ? state.pages * BLD.EXTRA : 0; }
+  function bldAddonsCost() { return state.addons.reduce((s, a) => s + a.price, 0); }
+  function bldTotal() { return bldBase() + bldPagesCost() + bldAddonsCost(); }
+
+  function renderBuilder(animate) {
+    const linesEl = document.getElementById("sumLines");
+    const out = [];
+    out.push(`<li><span>${BLD.NAME[state.type]} &middot; ${BLD.PAGE[state.type]}</span><span class="price">${fmtMoney(bldBase())}</span></li>`);
+    if (bldPagesCost() > 0) out.push(`<li class="dim"><span>Extra pages &times;${state.pages}</span><span class="price">${fmtMoney(bldPagesCost())}</span></li>`);
+    state.addons.forEach((a) => out.push(`<li><span>${a.label}</span><span class="price">${fmtMoney(a.price)}</span></li>`));
+    linesEl.innerHTML = out.join("");
+
+    const totalEl = document.getElementById("sumTotal");
+    const target = bldTotal();
+    if (animate && !reduceMotion && target !== prevTotal) {
+      const from = prevTotal;
+      const t0 = performance.now(), dur = 450;
+      (function tick(t) {
+        const p = Math.min((t - t0) / dur, 1);
+        const e = 1 - Math.pow(1 - p, 3);
+        totalEl.textContent = fmtMoney(Math.round(from + (target - from) * e));
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    } else {
+      totalEl.textContent = fmtMoney(target);
+    }
+    prevTotal = target;
+    updateQuoteBtn();
+  }
+
+  function buildQuoteMsg() {
+    const L = [];
+    L.push("Website quote request for Satti Web Studio:");
+    L.push(`• ${BLD.NAME[state.type]} — ${fmtMoney(bldBase())} (${BLD.PAGE[state.type]}, ${BLD.DAYS[state.type]})`);
+    if (bldPagesCost() > 0) L.push(`• Extra pages ×${state.pages} — ${fmtMoney(bldPagesCost())}`);
+    state.addons.forEach((a) => L.push(`• ${a.label} — ${fmtMoney(a.price)}`));
+    L.push(`Total: ${fmtMoney(bldTotal())}`);
+    L.push("");
+    L.push("Please send me my free plan.");
+    return encodeURIComponent(L.join("\n"));
+  }
+
+  function updateQuoteBtn() {
+    const btn = document.getElementById("quoteBtn");
+    if (btn) btn.href = `https://wa.me/923165661622?text=${buildQuoteMsg()}`;
+  }
+
+  function syncBuilderUI() {
+    document.getElementById("pagesGroup").classList.toggle("dim", state.type !== "business");
+  }
+
+  document.querySelectorAll('input[name="type"]').forEach((r) => {
+    r.addEventListener("change", () => { if (!r.checked) return; state.type = r.value; syncBuilderUI(); renderBuilder(true); });
+  });
+
+  document.getElementById("incPages").addEventListener("click", () => { if (state.pages < 6) { state.pages++; renderBuilder(true); } });
+  document.getElementById("decPages").addEventListener("click", () => { if (state.pages > 0) { state.pages--; renderBuilder(true); } });
+
+  document.querySelectorAll("#addonsRow input").forEach((c) => {
+    c.addEventListener("change", () => {
+      const label = c.dataset.label, price = +c.dataset.price;
+      if (c.checked) { if (!state.addons.some((a) => a.label === label)) state.addons.push({ label, price }); }
+      else { state.addons = state.addons.filter((a) => a.label !== label); }
+      renderBuilder(true);
+    });
+  });
+
+  syncBuilderUI();
+  renderBuilder(false);
+</script>
+</body>
+</html>

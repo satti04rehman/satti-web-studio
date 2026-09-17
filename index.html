@@ -3,875 +3,809 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Satti Web Studio — Websites That Win Customers</title>
-<meta name="description" content="Satti Web Studio builds modern, mobile-friendly business websites and e-commerce stores across Pakistan. Delivered fast, starting at Rs. 25,000." />
-<meta property="og:title" content="Satti Web Studio — Websites That Win Customers" />
-<meta property="og:description" content="Business websites, e-commerce stores and landing pages. Designed in days, built to convert." />
+<title>Satti Studio — Design-first web development, Pakistan</title>
+<meta name="description" content="Satti Studio builds premium, mobile-perfect websites and e-commerce stores across Pakistan. Landing pages, business websites and online stores — delivered fast from Rs. 12,000." />
+<meta property="og:title" content="Satti Studio — Websites that turn browsers into buyers" />
+<meta property="og:description" content="Landing pages, business websites and online stores. Hand-coded, mobile-perfect, live in days." />
 <meta property="og:type" content="website" />
-<meta name="theme-color" content="#F5F5F0" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F5F5F0'/%3E%3Crect x='3' y='3' width='58' height='58' rx='12' fill='none' stroke='%231A1A1A' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%231A1A1A'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#050505" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050505'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23F3F1EA' text-anchor='middle'%3ES%3C/text%3E%3Ccircle cx='54' cy='16' r='4' fill='%23E3D3B5'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;500;600;700&family=Questrial&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter+Tight:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
-  :root {
-    --bg: #F5F5F0;
-    --ink: #1A1A1A;
-    --muted: #6B6B6B;
-    --accent: #4A4A4A;
-    --surface: #EAEAE5;
-    --glass: rgba(0,0,0,.04);
-    --glass-border: rgba(0,0,0,.08);
-    --ok: #4A9E6B;
-    --radius: 18px;
-    --serif: "Fahkwang", Georgia, serif;
-    --sans: "Questrial", system-ui, -apple-system, sans-serif;
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body {
-    font-family:var(--sans);
-    background:var(--bg);
-    color:var(--ink);
-    line-height:1.6;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  ::selection { background:var(--ink); color:#F5F5F0; }
-  a { color:inherit; }
-  :focus-visible { outline:2px dashed var(--accent); outline-offset:3px; border-radius:4px; }
-  section[id] { scroll-margin-top:96px; }
-  img, svg { display:inline-block; vertical-align:middle; }
+:root{
+  --bg:#050505; --bg2:#0B0B0B; --bg3:#121212;
+  --ink:#F3F1EA; --mut:rgba(243,241,234,.55); --dim:rgba(243,241,234,.35);
+  --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.24);
+  --acc:#E3D3B5; --acc-mut:rgba(227,211,181,.6);
+  --light:#E9E6E0; --lightink:#101010; --lightmut:rgba(16,16,16,.62);
+  --f-sans:"Inter Tight",system-ui,-apple-system,sans-serif;
+  --f-disp:"Space Grotesk",var(--f-sans);
+  --f-serif:"Playfair Display",Georgia,serif;
+  --f-mono:"Space Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(20px,5vw,56px);
+  --sec-pad:clamp(80px,10vw,150px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:var(--bg)}
+:focus-visible{outline:2px dashed var(--acc);outline-offset:3px;border-radius:4px}
+a{color:inherit;text-decoration:none}
+img,svg{display:inline-block;vertical-align:middle}
+section[id]{scroll-margin-top:70px}
+.mono{font-family:var(--f-mono)}
 
-  .container { position:relative; z-index:2; max-width:1140px; margin:0 auto; padding:0 24px; }
-  .skip-link { position:absolute; left:-999px; top:0; background:var(--ink); color:#F5F5F0; padding:12px 20px; border-radius:0 0 12px 0; z-index:200; font-weight:600; }
-  .skip-link:focus { left:0; top:0; }
+.skip-link{position:fixed;left:-999px;top:0;z-index:300;background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:0 0 12px 0;font-weight:600}
+.skip-link:focus{left:0}
 
-  /* Scroll progress */
-  .sp{position:fixed;top:0;left:0;height:3px;width:0;z-index:999;background:linear-gradient(90deg,var(--accent),#666);box-shadow:0 0 12px rgba(0,0,0,.2)}
+/* ===== top progress ===== */
+.sp{position:fixed;top:0;left:0;height:2px;width:0;z-index:260;background:var(--acc)}
 
-  /* Header */
-  header { position:fixed; top:0; left:0; right:0; z-index:100; }
-  .nav {
-    position:relative; max-width:1100px; margin:0 auto; padding:0 24px; height:72px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .brand { font-family:var(--serif); font-size:22px; font-weight:600; text-decoration:none; letter-spacing:.5px; display:inline-block; padding:11px 0; line-height:1.3; }
-  .nav-right { display:flex; align-items:center; gap:32px; }
-  .nav-links { display:flex; gap:28px; align-items:center; }
-  .nav-links a { text-decoration:none; font-size:15px; color:var(--muted); transition:color .2s; }
-  .nav-links a:hover { color:var(--ink); }
-  .nav-cta {
-    display:inline-flex; align-items:center; gap:8px;
-    padding:12px 24px; border-radius:999px;
-    font-weight:600; font-size:14px; text-decoration:none; cursor:pointer;
-    background:var(--ink); color:#F5F5F0;
-    border:none; transition:transform .15s, box-shadow .2s;
-    font-family:var(--sans);
-  }
-  .nav-cta:active { transform:scale(.97); }
-  .nav-cta:hover { box-shadow:0 8px 24px rgba(0,0,0,.25); }
+/* ===== header ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:200;mix-blend-mode:difference;color:#fff}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 var(--pad)}
+.logo{font-family:var(--f-serif);font-style:italic;font-size:20px;letter-spacing:.5px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.logo .dot{width:9px;height:9px;border-radius:50%;background:#fff}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-family:var(--f-mono);font-size:13px;text-transform:uppercase;letter-spacing:.08em;display:inline-flex;align-items:center;min-height:44px;padding:0 14px;opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-cta{font-family:var(--f-mono);font-size:13px;border:1px solid #fff;border-radius:999px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;transition:background .2s,color .2s}
+.nav-cta:hover{background:#fff;color:#000}
+.menu-btn{display:none;appearance:none;background:none;border:1px solid #fff;border-radius:12px;width:48px;height:48px;flex:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#fff}
+.menu-btn span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-  .menu-btn {
-    display:none; appearance:none; background:none; border:1px solid var(--glass-border); border-radius:12px;
-    width:44px; height:44px; flex:none; cursor:pointer; flex-direction:column; align-items:center; justify-content:center; gap:5px;
-  }
-  .menu-btn span { display:block; width:18px; height:2px; background:var(--ink); border-radius:2px; transition:transform .25s, opacity .25s; }
-  .menu-btn[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
-  .menu-btn[aria-expanded="true"] span:nth-child(2){ opacity:0; }
-  .menu-btn[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+/* ===== layout helpers ===== */
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.lbl{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.lbl .tag{color:var(--acc)}
+.giant{font-family:var(--f-disp);font-weight:500;text-transform:uppercase;line-height:.98;letter-spacing:-.02em}
 
-  /* Buttons */
-  .btn {
-    display:inline-flex; align-items:center; gap:8px;
-    padding:13px 26px; border-radius:999px;
-    font-weight:600; font-size:15px; text-decoration:none; cursor:pointer;
-    border:1px solid transparent; transition:transform .15s, box-shadow .2s;
-    font-family:var(--sans);
-  }
-  .btn:active { transform:scale(.97); }
-  .btn-primary { background:var(--ink); color:#F5F5F0; }
-  .btn-primary:hover { box-shadow:0 8px 24px rgba(0,0,0,.25); }
-  .btn-outline { background:transparent; border:1px solid var(--glass-border); color:var(--ink); }
-  .btn-outline:hover { border-color:var(--ink); }
-  .btn .barr { transition:transform .2s; }
-  .btn:hover .barr { transform:translateX(3px); }
+/* ===== hero ===== */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 0 0;position:relative}
+.hero .type-line{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);min-height:24px;margin-bottom:28px}
+.hero .type-line .curs{display:inline-block;width:10px;height:1em;background:var(--acc);vertical-align:-2px;animation:blink 1.1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:34px}
+.hero-meta .sep{color:var(--dim)}
+.hero h1{font-family:var(--f-disp);font-weight:500;text-transform:uppercase;line-height:.98;letter-spacing:-.02em;font-size:clamp(42px,10.5vw,164px);text-wrap:balance}
+.hero h1 .em{display:block}
+.hero .tag-ital{font-family:var(--f-serif);font-style:italic;font-weight:300;color:var(--acc);font-size:clamp(26px,4.6vw,58px);line-height:1.14;margin:26px 0 38px;letter-spacing:.01em;text-wrap:balance}
+.hero-lead{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);max-width:620px;line-height:1.9}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 36px;margin-top:44px;padding-bottom:8px}
+.hero-actions .start{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line2);display:inline-flex;align-items:center;gap:10px;min-height:48px;color:var(--ink);transition:color .2s,border-color .2s}
+.hero-actions .start:hover{color:var(--acc);border-color:var(--acc)}
+.hero-actions .start .arr{transition:transform .2s}
+.hero-actions .start:hover .arr{transform:translateX(4px)}
+.hero-actions .lite{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line);display:inline-flex;align-items:center;gap:10px;min-height:48px;color:var(--dim);transition:color .2s,border-color .2s}
+.hero-actions .lite:hover{color:var(--ink);border-color:var(--line2)}
 
-  /* Hero */
-  .hero {
-    background:var(--ink); color:#F5F5F0;
-    padding:160px 0 100px; text-align:center;
-    position:relative; overflow:hidden;
-  }
-  .hero::before {
-    content:""; position:absolute; inset:0;
-    background:radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255,255,255,.08), transparent 70%);
-    pointer-events:none;
-  }
-  .hero h1 {
-    font-family:var(--serif);
-    font-size:clamp(36px,5.5vw,64px);
-    font-weight:600; line-height:1.1; letter-spacing:-.5px;
-    max-width:700px; margin:0 auto 24px; text-wrap:balance;
-    color:#F5F5F0;
-  }
-  .hero p.lead {
-    max-width:560px; margin:0 auto 36px;
-    font-size:clamp(15px,1.8vw,18px); color:rgba(245,245,240,.65); line-height:1.7;
-  }
-  .hero-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-  .hero-actions .btn-primary { background:#F5F5F0; color:var(--ink); }
-  .hero-actions .btn-primary:hover { box-shadow:0 8px 24px rgba(245,245,240,.3); }
-  .hero-actions .btn-outline { border-color:rgba(245,245,240,.3); color:#F5F5F0; }
-  .hero-actions .btn-outline:hover { border-color:#F5F5F0; }
+/* big italic slogan */
+.slogan{border-top:1px solid var(--line);padding:clamp(60px,8vw,120px) 0 clamp(70px,9vw,130px);margin-top:clamp(50px,7vw,90px)}
+.slogan .serif-word{font-family:var(--f-serif);font-style:italic;font-weight:300;color:var(--ink);font-size:clamp(30px,5.4vw,86px);line-height:1.16;text-wrap:balance}
+.slogan .serif-word .ac{color:var(--acc)}
 
-  /* Word reveal */
-  .word { display:inline-block; overflow:hidden; vertical-align:bottom; }
-  .word > span { display:inline-block; transform:translateY(110%); animation:rise .7s cubic-bezier(.22,1,.36,1) forwards; }
-  .word + .space { display:inline-block; width:.27em; }
-  @keyframes rise { to { transform:translateY(0); } }
+/* ===== marquee ===== */
+.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);white-space:nowrap}
+.mq .mq-in{display:inline-flex;gap:0;animation:mq 26s linear infinite;will-change:transform}
+.mq span{display:inline-flex;align-items:center;gap:0;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;padding:16px 24px;color:var(--mut)}
+.mq span i{font-style:normal;color:var(--acc);margin-left:48px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mq.mq-rev .mq-in{animation-direction:reverse}
 
-  /* Section basics */
-  section { position:relative; z-index:2; padding:clamp(72px,8vw,110px) 0; border-top:1px solid var(--glass-border); }
-  .sec-head { max-width:700px; margin-bottom:54px; }
-  .sec-head h2 {
-    font-family:var(--serif); font-size:clamp(30px,4.2vw,44px); font-weight:600; line-height:1.15;
-    margin-bottom:16px; text-wrap:balance;
-  }
-  .sec-head p { color:var(--muted); font-size:16px; }
-  .sec-head .kicker { font-size:12px; font-weight:600; letter-spacing:3.2px; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:12px; }
+/* ===== section base ===== */
+.sec{padding:var(--sec-pad) 0;position:relative}
+.sec-light{background:var(--light);color:var(--lightink)}
+.sec-light .lbl{color:var(--lightmut)}
+.sec-light .line{background:rgba(16,16,16,.15)}
 
-  /* Divider line */
-  .divider { height:1px; background:var(--glass-border); margin:48px 0; }
+/* section intro */
+.sec-intro{display:grid;grid-template-columns:1fr minmax(0,420px);gap:40px;align-items:end;margin-bottom:clamp(48px,6vw,84px)}
+.sec-intro h2{font-size:clamp(48px,8.5vw,118px)}
+.sec-intro .meta{display:grid;gap:14px}
+.sec-intro .desc{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);line-height:1.9}
 
-  /* About section */
-  .about-intro { max-width:700px; margin-bottom:20px; }
-  .about-intro h2 { font-family:var(--serif); font-size:clamp(30px,4.2vw,44px); font-weight:600; line-height:1.15; margin-bottom:16px; text-wrap:balance; }
-  .about-intro p { color:var(--muted); font-size:16px; margin-bottom:24px; }
+/* ===== services ===== */
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.serv-card{position:relative;padding:34px 28px 38px;border-bottom:1px solid var(--line);transition:background .25s;display:flex;flex-direction:column;gap:0;min-width:0}
+.serv-card + .serv-card{border-left:1px solid var(--line)}
+.serv-card:hover{background:var(--bg3)}
+.serv-card .n{font-family:var(--f-mono);font-size:12px;color:var(--dim);letter-spacing:.1em;margin-bottom:40px}
+.serv-card .n b{color:var(--acc);font-weight:400}
+.serv-card h3{font-family:var(--f-disp);font-weight:500;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(24px,2.4vw,34px);line-height:1.05;margin-bottom:22px}
+.serv-card ul{list-style:none;display:grid;gap:8px;margin-bottom:34px}
+.serv-card li{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);display:flex;gap:10px;align-items:baseline}
+.serv-card li::before{content:"+";color:var(--acc);flex:none}
+.serv-card .foot{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding-top:22px}
+.serv-card .price{font-family:var(--f-mono);font-size:12.5px;color:var(--ink)}
+.serv-card .price small{display:block;color:var(--dim);margin-top:4px;font-size:12px}
+.serv-card .arrow{width:44px;height:44px;flex:none;border:1px solid var(--line2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:transform .2s,border-color .2s,color .2s}
+.serv-card:hover .arrow{transform:translate(3px,-3px);border-color:var(--acc);color:var(--acc)}
+.sec-cta{display:flex;justify-content:center;margin-top:clamp(40px,5vw,64px)}
+.sec-cta .start{font-family:var(--f-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line2);display:inline-flex;align-items:center;gap:10px;min-height:52px;transition:color .2s,border-color .2s}
+.sec-cta .start:hover{color:var(--acc);border-color:var(--acc)}
+.sec-cta .start .arr{transition:transform .2s}
+.sec-cta .start:hover .arr{transform:translateX(4px)}
 
-  .about-band { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:clamp(48px,5vw,72px); }
-  .about-band h3 { font-family:var(--serif); font-size:clamp(24px,3.2vw,36px); font-weight:600; line-height:1.15; margin-bottom:16px; text-wrap:balance; }
-  .about-band p { color:var(--muted); font-size:15px; margin-bottom:14px; }
-  .about-img {
-    border-radius:var(--radius); overflow:hidden; aspect-ratio:490/571;
-    background:var(--surface);
-  }
-  .about-photo { width:100%; height:100%; object-fit:cover; display:block; }
-  .about-img-inner {
-    width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    background:linear-gradient(160deg, var(--surface), rgba(0,0,0,.03));
-    padding:32px; text-align:center;
-  }
-  .about-img-inner .mock-device {
-    width:80%; max-width:200px; aspect-ratio:3/4; border-radius:12px;
-    background:var(--ink); display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:8px; padding:20px; margin-bottom:16px;
-  }
-  .about-img-inner .mock-device .bar { width:40%; height:4px; border-radius:2px; background:rgba(245,245,240,.3); }
-  .about-img-inner .mock-device .block { width:60%; height:6px; border-radius:3px; background:var(--accent); }
-  .about-img-inner .mock-device .dots { display:flex; gap:4px; }
-  .about-img-inner .mock-device .dots span { width:8px; height:8px; border-radius:50%; background:rgba(245,245,240,.25); }
-  .about-img-inner .mock-device .dots span.on { background:var(--accent); }
-  .about-img-inner .caption { font-size:12px; color:var(--muted); max-width:180px; }
+/* ===== approach ===== */
+.app-row{display:grid;grid-template-columns:64px 1fr minmax(0,380px) 44px;gap:24px;align-items:center;border-top:1px solid var(--line);padding:30px 4px;transition:background .25s}
+.app-row:last-child{border-bottom:1px solid var(--line)}
+.app-row:hover{background:var(--bg3)}
+.app-row .n{font-family:var(--f-mono);font-size:12px;color:var(--dim)}
+.app-row .name{font-family:var(--f-disp);font-weight:500;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(26px,3.4vw,46px);line-height:1.05}
+.app-row .pair{display:grid;gap:6px;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.app-row .pair b{color:var(--acc);font-weight:400}
+.app-row .arr{height:44px;width:44px;flex:none;border:1px solid var(--line2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,color .2s,border-color .2s}
+.app-row:hover .arr{transform:rotate(45deg);border-color:var(--acc);color:var(--acc)}
 
-  .about-img-rev { background:linear-gradient(160deg, rgba(74,74,74,.06), var(--surface)); }
-  .about-img-rev .mock-device { background:linear-gradient(160deg, #26262a, #333338); }
-  .about-img-rev .mock-device .bar { background:rgba(245,245,240,.2); }
-  .about-img-rev .mock-device .block { background:#F5F5F0; }
+/* ===== work / filters ===== */
+.filters{display:flex;flex-wrap:wrap;gap:10px}
+.fchip{appearance:none;background:none;border:1px solid var(--line2);border-radius:999px;color:var(--mut);font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:13px 20px;cursor:pointer;transition:color .2s,border-color .2s,background .2s;min-height:44px}
+.fchip:hover{color:var(--ink);border-color:var(--ink)}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:clamp(40px,5vw,64px)}
+.wk{border:1px solid var(--line);background:var(--bg2);display:flex;flex-direction:column}
+.wk figure{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--bg3)}
+.wk figure img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s ease}
+.wk:hover figure img{transform:scale(1.035)}
+.wk .meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-top:1px solid var(--line);min-height:76px}
+.wk .t{font-family:var(--f-disp);font-weight:500;text-transform:uppercase;letter-spacing:-.01em;font-size:17px;line-height:1.15}
+.wk .t small{display:block;font-family:var(--f-mono);font-weight:400;font-size:12px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:5px}
+.wk .go{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line2);border-radius:999px;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;flex:none;color:var(--mut);transition:color .2s,border-color .2s}
+.wk .go:hover{color:var(--acc);border-color:var(--acc)}
+.wk[data-cat="ecommerce"] figure::after{content:"E-COMMERCE";position:absolute;top:14px;left:14px;background:var(--ink);color:var(--bg);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;padding:6px 10px}
+.wk[data-cat="landing"] figure::after{content:"LANDING";position:absolute;top:14px;left:14px;background:var(--acc);color:var(--bg);font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;padding:6px 10px}
+.wk.hide{display:none}
 
-  /* Portfolio */
-  .portfolio-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; flex-wrap:wrap; }
-  .portfolio-header h3 { font-family:var(--serif); font-size:clamp(28px,3.8vw,40px); font-weight:600; }
+/* ===== core vision (light) ===== */
+.cv-head{font-family:var(--f-serif);font-style:italic;font-weight:300;font-size:clamp(64px,13vw,200px);line-height:.95;letter-spacing:-.015em;color:var(--lightink);margin-bottom:clamp(40px,5vw,70px);text-wrap:balance}
+.cv-head .ac{color:var(--lightmut)}
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px);align-items:start}
+.cv-copy p{font-size:16.5px;line-height:1.8;color:var(--lightmut);margin-bottom:20px;max-width:620px}
+.cv-copy p:first-child strong{color:var(--lightink);font-weight:600}
+.cv-copy .cv-ital{font-family:var(--f-serif);font-style:italic;font-size:clamp(22px,2.6vw,34px);line-height:1.4;color:var(--lightink);margin:34px 0 0}
+.cv-photo{border:1px solid rgba(16,16,16,.18);padding:14px}
+.cv-photo img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:top;}
+.cv-photo figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--lightmut)}
+.cv-photo figcaption b{color:var(--lightink);font-weight:400}
+.cv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(16,16,16,.18);margin-top:clamp(48px,6vw,84px)}
+.cv-stats div{background:var(--light);padding:26px 20px}
+.cv-stats .num{font-family:var(--f-disp);font-size:clamp(30px,4vw,52px);font-weight:500;line-height:1}
+.cv-stats .lab{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--lightmut);margin-top:10px}
 
-  .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-  .gallery-item {
-    position:relative; border-radius:var(--radius); overflow:hidden;
-    aspect-ratio:16/10; cursor:pointer; background:var(--surface);
-  }
-  .gallery-item .thumb { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
-  .gallery-item .mock-screen {
-    width:100%; height:100%; display:flex; flex-direction:column; padding:20px; gap:8px;
-  }
-  .gallery-item .mock-screen .bar { display:flex; gap:4px; }
-  .gallery-item .mock-screen .bar span { width:8px; height:8px; border-radius:50%; }
-  .gallery-item .mock-screen .bar span:nth-child(1){background:#E56B5F}.gallery-item .mock-screen .bar span:nth-child(2){background:#E4BE5B}.gallery-item .mock-screen .bar span:nth-child(3){background:#68B26D}
-  .gallery-item .mock-screen .title { font-family:var(--serif); font-size:clamp(16px,2vw,22px); font-weight:600; margin:auto 0 12px; }
-  .gallery-item .mock-screen .chips { display:flex; gap:6px; flex-wrap:wrap; }
-  .gallery-item .mock-screen .chip { font-size:9px; padding:4px 10px; border-radius:999px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.2); color:rgba(255,255,255,.8); }
+/* ===== sectors ===== */
+.sec-note{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-align:center;margin-top:22px}
 
-  /* Mock screens */
-  .mock-skyline { background:linear-gradient(160deg,#26262a,#111114); color:#E8E8E5; }
-  .mock-skyline .bar span { border:1px solid rgba(255,255,255,.4); }
-  .mock-skyline .bar span.on { background:#F5F5F0 !important; border-color:#F5F5F0; }
-  .mock-skyline .chips .chip { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); color:#E8E8E5; }
+/* ===== toolkit ===== */
+.tk-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:20px 34px;margin-bottom:clamp(44px,5vw,66px)}
+.tk-head h2{font-size:clamp(44px,7vw,96px)}
+.tk-head .sub{font-family:var(--f-serif);font-style:italic;font-weight:300;color:var(--acc);font-size:clamp(22px,3vw,40px)}
+.tk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.tk{background:var(--bg);min-height:88px;display:flex;align-items:center;gap:14px;padding:16px 18px;transition:background .2s}
+.tk:hover{background:var(--bg3)}
+.tk .n{font-family:var(--f-mono);font-size:12px;color:var(--dim);letter-spacing:.05em}
+.tk b{font-family:var(--f-disp);font-weight:500;text-transform:uppercase;font-size:14px;letter-spacing:-.01em}
 
-  .mock-clinic { background:linear-gradient(150deg,#062E2C,#0B5350); color:#E7F6F3; }
-  .mock-clinic .bar span { border:1px solid rgba(127,216,207,.4); }
-  .mock-clinic .bar span.on { background:var(--ok) !important; border-color:var(--ok); }
-  .mock-clinic .chips .chip { background:rgba(127,216,207,.15); border-color:rgba(127,216,207,.3); color:#7FD8CF; }
+/* ===== kick off / footer ===== */
+.kick{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,6vw,80px);align-items:start}
+.kick h2{font-size:clamp(52px,9.5vw,150px);line-height:.93;margin:0 0 20px}
+.kick h2 .serif2{font-family:var(--f-serif);font-style:italic;font-weight:300;text-transform:none;color:var(--acc);display:block;font-size:.52em;margin-top:18px;line-height:1.2}
+.kick .col-r{display:grid;gap:34px}
+.kick .email-row{background:var(--bg2);border:1px solid var(--line);padding:22px 26px;transition:border-color .2s}
+.kick .email-row:hover{border-color:var(--line2)}
+.kick .email-row .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.kick .email-row .v{font-family:var(--f-disp);font-size:clamp(20px,3vw,32px);font-weight:500;letter-spacing:-.01em;display:inline-flex;gap:12px;align-items:center;word-break:break-word;min-height:52px}
+.kick .email-row .vv{font-family:var(--f-serif);font-style:italic;font-weight:300;font-size:clamp(20px,2.8vw,30px);color:var(--acc);display:inline-flex;align-items:center;min-height:52px}
+.kick .kick-cta{margin-top:6px}
+.kickbtn{border:1px solid var(--ink);color:var(--ink);font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 30px;border-radius:999px;transition:background .2s,color .2s}
+.kickbtn:hover{background:var(--ink);color:var(--bg)}
+footer{border-top:1px solid var(--line);padding-top:clamp(80px,10vw,140px)}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);margin-top:clamp(56px,7vw,90px);padding:26px 0 120px}
+.foot-bottom .f-meta{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.foot-socials{display:flex;gap:8px}
+.foot-socials a{min-width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--mut);transition:color .2s,border-color .2s}
+.foot-socials a:hover{color:var(--acc);border-color:var(--acc)}
 
-  .mock-academy { background:linear-gradient(150deg,#EEF0FF,#F8F1FF); color:#191233; }
-  .mock-academy .bar span { border:1px solid #D8DBF5; }
-  .mock-academy .bar span.on { background:var(--accent) !important; border-color:var(--accent); }
-  .mock-academy .chips .chip { background:#fff; border-color:#D8DBF5; color:#191233; }
+/* ===== FAB ===== */
+.wa-fab{position:fixed;right:22px;bottom:22px;z-index:180;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#2BCC78,#25D366);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.35);text-decoration:none;transition:transform .2s}
+.wa-fab:hover{transform:scale(1.08)}
 
-  .mock-tc { background:linear-gradient(160deg,#16130E,#0A0907); color:#F4EFE6; }
-  .mock-tc .bar span { border:1px solid rgba(169,123,44,.4); }
-  .mock-tc .bar span.on { background:var(--accent) !important; border-color:var(--accent); }
-  .mock-tc .chips .chip { background:rgba(169,123,44,.15); border-color:rgba(169,123,44,.3); color:#F4EFE6; }
+/* ===== modal ===== */
+.modal{position:fixed;inset:0;z-index:250;display:none;align-items:flex-start;justify-content:center;background:rgba(3,3,3,.72);backdrop-filter:blur(8px);overflow-y:auto;padding:40px 20px 60px}
+.modal.open{display:flex}
+.modal-in{background:var(--bg);border:1px solid var(--line2);max-width:760px;width:100%;padding:clamp(24px,4vw,44px);position:relative}
+.modal-in .mod-close{position:absolute;top:16px;right:16px;width:48px;height:48px;border:1px solid var(--line2);border-radius:50%;background:none;color:var(--ink);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s}
+.modal-in .mod-close:hover{border-color:var(--acc);color:var(--acc)}
+.modal-in h3{font-family:var(--f-serif);font-style:italic;font-weight:300;color:var(--acc);font-size:clamp(26px,4vw,38px);line-height:1.15;margin:6px 0 28px}
+.bld-cols{display:grid;gap:10px}
+.pc{border:1px solid var(--line);padding:16px 18px;cursor:pointer;display:grid;gap:4px;transition:border-color .2s,background .2s;position:relative}
+.pc:hover{border-color:var(--line2)}
+.pc input{position:absolute;opacity:0;pointer-events:none}
+.pc:has(input:checked){border-color:var(--acc);background:var(--bg3)}
+.pc .row1{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.pc .pc-name{font-family:var(--f-disp);font-weight:500;text-transform:uppercase;font-size:16px;letter-spacing:-.01em}
+.pc .pc-price{font-family:var(--f-mono);font-size:12px;color:var(--acc);white-space:nowrap}
+.pc .pc-sub{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.bld-sec{border-top:1px solid var(--line);margin-top:24px;padding-top:20px;display:grid;gap:14px}
+.bld-sec legend,.mod-legend{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.stepper{display:flex;align-items:center;gap:16px}
+.stepper button{width:48px;height:48px;border:1px solid var(--line2);background:none;color:var(--ink);font-size:22px;cursor:pointer;transition:border-color .2s,color .2s}
+.stepper button:hover{border-color:var(--acc);color:var(--acc)}
+.stepper .pagesCnt{min-width:30px;text-align:center;font-family:var(--f-disp);font-size:26px;color:var(--acc)}
+.stepper .note{font-family:var(--f-mono);font-size:12px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+.addons{display:grid;gap:10px}
+.ac{border:1px solid var(--line);padding:14px 16px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:border-color .2s,background .2s;min-height:52px}
+.ac:hover{border-color:var(--line2)}
+.ac input{position:absolute;opacity:0;pointer-events:none}
+.ac .tick{width:22px;height:22px;flex:none;border:1px solid var(--line2);border-radius:6px;display:flex;align-items:center;justify-content:center;color:transparent;font-size:13px}
+.ac:has(input:checked){border-color:var(--acc);background:var(--bg3)}
+.ac:has(input:checked) .tick{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.ac .ac-t{font-size:14px;flex:1;color:var(--mut)}
+.ac b{font-family:var(--f-mono);font-size:12px;font-weight:400;color:var(--acc);white-space:nowrap}
+.bld-total{display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:24px;padding-top:20px}
+.bld-total span{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.bld-total strong{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:clamp(28px,5vw,44px);color:var(--acc)}
+.bld-msg{margin-top:16px}
+textarea{width:100%;font-family:var(--f-sans);font-size:14px;color:var(--ink);background:var(--bg3);border:1px solid var(--line2);padding:12px 14px;min-height:52px;resize:vertical}
+textarea::placeholder{color:var(--dim)}
+textarea:focus{outline:none;border-color:var(--acc)}
+.bld-send{margin-top:18px;display:block}
+.bld-send{background:var(--ink);color:var(--bg);border:none;font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;min-height:58px;padding:0 28px;cursor:pointer;display:inline-flex;align-items:center;gap:12px;transition:transform .15s}
+.bld-send:hover{transform:translateY(-2px)}
+.bld-send:active{transform:none}
+.bld-note{font-family:var(--f-mono);font-size:12px;color:var(--dim);margin-top:12px;letter-spacing:.04em}
 
-  /* Gallery overlay */
-  .gallery-item .overlay {
-    position:absolute; inset:0; background:rgba(26,26,26,.8);
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    opacity:0; transition:opacity .3s; padding:20px; text-align:center;
-  }
-  .gallery-item:hover .overlay { opacity:1; }
-  .overlay h4 { font-family:var(--serif); font-size:20px; color:#F5F5F0; margin-bottom:6px; }
-  .overlay p { font-size:13px; color:rgba(245,245,240,.7); margin-bottom:16px; }
-  .overlay .btn { font-size:13px; padding:11.5px 20px; }
+/* ===== reveal ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
 
-  /* Contact */
-  .contact-section {
-    position:relative; overflow:hidden;
-    background:linear-gradient(180deg, var(--ink), #222);
-    color:#F5F5F0;
-  }
-  .contact-section::before {
-    content:""; position:absolute; inset:0;
-    background:radial-gradient(ellipse 70% 50% at 30% 60%, rgba(255,255,255,.05), transparent 70%);
-    pointer-events:none;
-  }
-  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; position:relative; z-index:2; }
-  .contact-grid h2 { font-family:var(--serif); font-size:clamp(28px,3.8vw,40px); font-weight:600; line-height:1.15; margin-bottom:18px; text-wrap:balance; }
-  .contact-grid .sub { color:rgba(245,245,240,.65); margin-bottom:28px; }
-
-  form.contact-form { display:grid; gap:16px; }
-  .field { display:grid; gap:6px; }
-  .field label { font-size:13px; font-weight:600; color:rgba(245,245,240,.55); }
-  .field input, .field select, .field textarea {
-    font-family:var(--sans); font-size:14px; padding:12px 14px;
-    border:1px solid rgba(245,245,240,.15); border-radius:10px;
-    background:rgba(245,245,240,.08); color:#F5F5F0;
-    transition:border-color .2s;
-  }
-  .field input::placeholder, .field textarea::placeholder { color:rgba(245,245,240,.35); }
-  .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:rgba(245,245,240,.5); }
-  .field select option { background:var(--ink); color:#F5F5F0; }
-  form .btn { justify-self:start; }
-  .form-note { font-size:12px; color:rgba(245,245,240,.45); }
-
-  /* Footer */
-  footer {
-    position:relative; z-index:2; background:var(--ink); color:#F5F5F0;
-    border-top:1px solid rgba(245,245,240,.08);
-  }
-  .footer-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:48px; padding:clamp(48px,5vw,72px) 0; }
-  .footer-left .brand { font-size:24px; margin-bottom:10px; display:inline-block; color:#F5F5F0; padding:10px 0; line-height:1.3; }
-  .footer-left .contact-line { display:flex; gap:10px; align-items:center; font-size:14px; color:rgba(245,245,240,.6); margin-bottom:8px; }
-  .footer-left .contact-line svg { flex:none; width:16px; height:16px; opacity:.5; }
-  .footer-socials { display:flex; gap:12px; margin-top:20px; }
-  .footer-socials a {
-    width:38px; height:38px; border-radius:50%; border:1px solid rgba(245,245,240,.15);
-    display:flex; align-items:center; justify-content:center; color:rgba(245,245,240,.6);
-    transition:border-color .2s, color .2s; text-decoration:none;
-  }
-  .footer-socials a:hover { border-color:#F5F5F0; color:#F5F5F0; }
-  .footer-right h4 { font-family:var(--serif); font-size:20px; margin-bottom:16px; }
-  .footer-right .newsletter { display:flex; gap:8px; }
-  .footer-right .newsletter input {
-    flex:1; font-family:var(--sans); font-size:14px; padding:12px 14px;
-    border:1px solid rgba(245,245,240,.15); border-radius:10px;
-    background:rgba(245,245,240,.08); color:#F5F5F0;
-  }
-  .footer-right .newsletter input::placeholder { color:rgba(245,245,240,.35); }
-  .footer-right .newsletter input:focus { outline:none; border-color:rgba(245,245,240,.5); }
-  .footer-right .newsletter button {
-    padding:16px 20px; border-radius:10px; border:none;
-    background:rgba(245,245,240,.9); color:var(--ink); font-family:var(--sans); font-weight:600; font-size:14px; cursor:pointer;
-  }
-  .footer-bottom { border-top:1px solid rgba(245,245,240,.08); padding:20px 0; text-align:center; font-size:13px; color:rgba(245,245,240,.4); }
-
-  /* Floating WA */
-  .wa-fab {
-    position:fixed; right:22px; bottom:22px; z-index:120;
-    width:58px; height:58px; border-radius:50%;
-    background:linear-gradient(135deg,#2BCC78,#25D366); color:#fff; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 10px 30px rgba(37,211,102,.35); text-decoration:none; transition:transform .2s;
-  }
-  .wa-fab:hover { transform:scale(1.08); }
-
-  /* Reveal */
-  .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
-  .reveal.in { opacity:1; transform:none; }
-
-  /* Process */
-  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-  .step { background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); padding:28px; position:relative; }
-  .step::before { counter-increment:step; content:"0" counter(step); font-family:var(--serif); font-size:15px; color:var(--accent); font-weight:600; display:block; margin-bottom:16px; }
-  .step h3 { font-size:16px; font-weight:600; margin-bottom:8px; }
-  .step p { font-size:13px; color:var(--muted); }
-  .step .day { display:inline-block; margin-top:14px; font-size:12px; font-weight:600; color:#333; background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.12); padding:4px 10px; border-radius:6px; }
-
-  /* Quote builder */
-  .bld-grid { display:grid; grid-template-columns:1.25fr .85fr; gap:28px; align-items:start; }
-  .bld-controls { display:grid; gap:22px; }
-  .bld-group { border:1px solid var(--glass-border); background:var(--glass); border-radius:var(--radius); padding:24px 24px 22px; display:grid; gap:16px; min-width:0; }
-  .bld-group legend { font-size:13px; font-weight:600; letter-spacing:.6px; color:var(--accent); }
-  .bld-group legend small { color:var(--muted); font-weight:400; letter-spacing:0; display:block; margin-top:2px; }
-  .bld-row { display:grid; gap:12px; }
-  .bld-row.cols { grid-template-columns:repeat(3,1fr); }
-  .pc { position:relative; display:flex; flex-direction:column; gap:3px; border:1px solid var(--glass-border); border-radius:14px; padding:16px 16px 14px; cursor:pointer; transition:border-color .15s, background .15s, transform .15s; }
-  .pc:hover { border-color:rgba(0,0,0,.25); transform:translateY(-2px); }
-  .pc input { position:absolute; opacity:0; pointer-events:none; }
-  .pc:has(input:checked) { border-color:var(--ink); background:rgba(0,0,0,.04); }
-  .pc .pc-icon { width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:11px; background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.12); color:var(--ink); margin-bottom:8px; }
-  .pc .pc-name { font-size:14px; font-weight:600; }
-  .pc .pc-price { font-family:var(--serif); font-size:17px; color:var(--accent); }
-  .pc .pc-sub { font-size:12px; color:var(--muted); }
-  .stepper { display:flex; align-items:center; gap:16px; }
-  .stepper button { width:46px; height:46px; border-radius:12px; border:1px solid var(--glass-border); background:rgba(255,255,255,.8); color:var(--ink); font-size:22px; line-height:1; cursor:pointer; transition:border-color .15s, color .15s; }
-  .stepper button:hover { border-color:var(--accent); color:var(--accent); }
-  .stepper #pagesCount { min-width:26px; text-align:center; font-family:var(--serif); font-size:24px; color:var(--accent); }
-  .stepper .stepper-note { color:var(--muted); font-size:13px; }
-  .bld-group.dim { opacity:.45; pointer-events:none; }
-  .ac { display:flex; align-items:center; gap:12px; border:1px solid var(--glass-border); border-radius:14px; padding:14px 16px; cursor:pointer; transition:border-color .15s, background .15s; font-size:14px; }
-  .ac:hover { border-color:rgba(0,0,0,.25); }
-  .ac input { position:absolute; opacity:0; pointer-events:none; }
-  .ac .ac-dot { width:20px; height:20px; flex:none; border-radius:6px; border:1px solid var(--glass-border); background:rgba(0,0,0,.04); display:flex; align-items:center; justify-content:center; color:transparent; font-size:13px; font-weight:700; transition:all .15s; }
-  .ac:has(input:checked) { border-color:var(--ink); background:rgba(0,0,0,.05); }
-  .ac:has(input:checked) .ac-dot { background:var(--ink); border-color:var(--ink); color:#F5F5F0; }
-  .ac b { margin-left:auto; color:var(--accent); font-weight:600; white-space:nowrap; font-size:13.5px; }
-
-  .bld-summary { position:sticky; top:96px; background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius); padding:26px; display:grid; gap:14px; align-content:start; }
-  .bld-summary h3 { font-family:var(--serif); font-size:20px; border-bottom:1px solid var(--glass-border); padding-bottom:13px; }
-  #sumLines { list-style:none; display:grid; gap:10px; }
-  #sumLines li { display:flex; justify-content:space-between; gap:12px; font-size:14px; }
-  #sumLines li span.price { color:var(--accent); font-weight:600; white-space:nowrap; }
-  #sumLines li.dim { color:var(--muted); font-size:12.5px; }
-  .sum-total { display:flex; justify-content:space-between; align-items:baseline; gap:12px; border-top:1px solid var(--glass-border); padding-top:15px; font-size:14px; }
-  .sum-total strong { font-family:var(--serif); font-size:30px; color:var(--accent); letter-spacing:-.3px; }
-  .sum-note { font-size:12.5px; color:var(--muted); }
-  .bld-btn { justify-content:center; }
-  .bld-offers { display:grid; gap:6px; }
-  .bld-offers li { list-style:none; font-size:12.5px; color:var(--muted); display:flex; gap:8px; }
-  .bld-offers li::before { content:"\2713"; color:var(--accent); font-weight:700; }
-
-  /* Services */
-  .serv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  .serv-card {
-    background:var(--glass); border:1px solid var(--glass-border); border-radius:var(--radius);
-    padding:32px; position:relative; transition:transform .2s, box-shadow .2s, border-color .2s; overflow:hidden;
-  }
-  .serv-card:hover { transform:translateY(-5px); border-color:rgba(0,0,0,.2); box-shadow:0 20px 60px rgba(0,0,0,.08); }
-  .serv-card .icon { width:50px; height:50px; margin-bottom:16px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.05); border:1px solid rgba(0,0,0,.12); border-radius:14px; color:var(--ink); }
-  .serv-card h3 { font-family:var(--serif); font-size:22px; font-weight:600; }
-  .serv-card p { font-size:14px; color:var(--muted); margin:10px 0 18px; }
-  .serv-price { font-size:14px; font-weight:600; }
-  .serv-price small { color:var(--muted); font-weight:400; }
-  .serv-card.popular { border-color:rgba(0,0,0,.3); }
-  .ribbon { position:absolute; top:-12px; right:20px; background:var(--ink); color:#F5F5F0; font-size:12px; font-weight:700; padding:6px 14px; border-radius:999px; z-index:2; }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior:auto; }
-    .word > span, .reveal, .gallery-item .overlay { transition:none !important; }
-    .word > span { transform:none; }
-    .reveal { opacity:1; transform:none; }
-  }
-
-  @media (max-width:900px) {
-    .about-band, .contact-grid, .bld-grid, .footer-grid { grid-template-columns:1fr; gap:36px; }
-    .bld-summary { position:static; }
-    .gallery { grid-template-columns:1fr 1fr; }
-    .serv-grid { grid-template-columns:1fr 1fr; }
-    .steps { grid-template-columns:1fr 1fr; }
-    .nav-links {
-      display:none; position:absolute; top:calc(100% + 10px); left:12px; right:12px;
-      flex-direction:column; align-items:stretch; gap:4px;
-      background:rgba(245,245,240,.97); border:1px solid var(--glass-border); border-radius:18px;
-      padding:14px; box-shadow:0 20px 60px rgba(0,0,0,.1);
-    }
-    .nav-links.open { display:flex; }
-    .nav-links a { padding:11px 14px; font-size:15px; border-radius:10px; }
-    .nav-links a:hover { background:var(--glass); }
-    .nav-links .nav-cta { justify-content:center; margin-top:6px; }
-    .menu-btn { display:inline-flex; }
-  }
-  @media (max-width:560px) {
-    .gallery, .serv-grid, .steps { grid-template-columns:1fr; }
-    .bld-row.cols { grid-template-columns:1fr; }
-    .hero { padding:130px 0 70px; }
-  }
+/* ===== responsive ===== */
+@media (max-width:1024px){
+  .serv-card h3{font-size:22px}
+  .app-row{grid-template-columns:46px 1fr 44px}
+  .app-row .pair{grid-column:2/4;grid-row:2}
+  .app-row .n{grid-row:1;grid-column:1}
+  .app-row .name{grid-row:1;grid-column:2}
+  .app-row .arr{grid-column:3;grid-row:1}
+  .tk-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:880px){
+  .nav-links{display:none;position:absolute;top:calc(100% + 10px);left:var(--pad);right:var(--pad);flex-direction:column;align-items:stretch;gap:2px;background:#000;mix-blend-mode:normal;border:1px solid #333;padding:14px;z-index:210}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:13px 14px;border-radius:10px;color:#fff}
+  .nav-links a:hover{background:#161616}
+  .nav-links .nav-cta{justify-content:center;margin-top:8px;color:#fff;border-color:#fff}
+  .menu-btn{display:inline-flex}
+  .sec-intro{grid-template-columns:1fr;align-items:start}
+  .serv-grid{grid-template-columns:1fr}
+  .serv-card + .serv-card{border-left:none}
+  .serv-card ul{margin-bottom:26px}
+  .work-grid{grid-template-columns:1fr}
+  .cv-grid{grid-template-columns:1fr}
+  .cv-photo{order:-1}
+  .cv-stats{grid-template-columns:1fr 1fr}
+  .kick{grid-template-columns:1fr}
+  .tk-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .serv-grid{grid-template-columns:1fr}
+  .cv-stats{grid-template-columns:1fr}
+  .cv-stats div:nth-child(2){grid-column:auto}
+  .kick h2{font-size:clamp(44px,13vw,64px)}
+  .foot-bottom{justify-content:center;text-align:center;padding-bottom:96px}
+  .hero{padding-top:110px}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:10px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .mq .mq-in{animation:none}
+  .word > span,.hero .type-line .curs{animation:none}
+}
 </style>
 </head>
 <body>
-<div class="sp" id="sp" aria-hidden="true"></div>
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="sp" id="sp" aria-hidden="true"></div>
 
-<header>
+<header id="hdr">
   <nav class="nav" aria-label="Primary">
-    <a class="brand" href="#top">Satti Web Studio</a>
-    <div class="nav-right">
-      <div class="nav-links" id="navLinks">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#builder">Quote</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#contact">Get in Touch</a>
-      </div>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+    <a class="logo" href="#top" aria-label="Satti Studio — home">SATTI<span class="dot" aria-hidden="true"></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button type="button" class="nav-cta" data-open-quote>Get free quote</button>
     </div>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 </header>
 
 <main id="main">
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="container">
-      <h1 aria-label="Websites that turn browsers into buyers.">
-        <span class="word"><span>Websites</span></span><span class="space"></span>
-        <span class="word"><span>that</span></span><span class="space"></span>
-        <span class="word"><span>turn</span></span><span class="space"></span>
-        <span class="word"><span>careful</span></span><br>
-        <span class="word"><span>browsers</span></span><span class="space"></span>
-        <span class="word"><span>into</span></span><span class="space"></span>
-        <span class="word"><span>buyers.</span></span>
+    <div class="wrap">
+      <p class="type-line" id="typeLine" aria-hidden="true"><span id="typeText"></span><span class="curs"></span></p>
+      <div class="hero-meta" id="heroMeta" data-reveal>
+        <span>&copy; est. 2023</span>
+        <span class="sep" aria-hidden="true">&#9670;</span>
+        <span>Lahore, Pakistan</span>
+        <span class="sep" aria-hidden="true">&#9670;</span>
+        <span>Freelance</span>
+        <span class="sep" aria-hidden="true">&#9670;</span>
+        <span>Available now</span>
+      </div>
+      <h1 id="heroTitle" data-reveal>
+        <span class="em">Web design &amp;</span>
+        <span class="em">development</span>
       </h1>
-      <p class="lead">With a proven track record in building modern, mobile-first business websites and e-commerce stores, Satti Web Studio is dedicated to delivering exceptional results through meticulous planning, creative design, and seamless execution.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#builder">Build my free quote <span class="barr">&rarr;</span></a>
-        <a class="btn btn-outline" href="#work">See my work</a>
+      <p class="tag-ital" id="heroItal" data-reveal>that turns browsers into buyers.</p>
+      <p class="hero-lead" id="heroLead" data-reveal>Freelance web developer in Pakistan. I craft premium digital experiences through design craft, functional tech, and strategic thinking &mdash; hand-coded, mobile-perfect, shipped in days.</p>
+      <div class="hero-actions" id="heroActs" data-reveal>
+        <a class="start" href="#" data-open-quote>Got a website on your mind? <span class="arr">&rarr;</span></a>
+        <a class="lite" href="#work">See selected work</a>
+      </div>
+    </div>
+
+    <div class="slogan">
+      <div class="wrap">
+        <p class="serif-word" id="slogan" data-reveal><span class="ac">Strategy.</span> Design. Code. Launch.</p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="about-intro reveal">
-        <h2>About</h2>
-        <p>Satti Web Studio is a seasoned web development practice renowned for expertly handling complex projects from inception to completion &mdash; delivering websites that win customers, not just look pretty.</p>
-        <a class="btn btn-primary" href="#work">My Work <span class="barr">&rarr;</span></a>
-      </div>
-      <div class="divider"></div>
-
-      <div class="about-band reveal">
-        <div>
-          <h3>The drive behind Satti Web Studio</h3>
-          <p>With years of experience across diverse industries, Abdul Rehman Satti has successfully led high-profile projects, ensuring seamless execution while maintaining artistic integrity and strategic vision.</p>
-          <p>His ability to navigate challenges, optimize workflows, and foster strong collaboration has earned him a reputation as a trusted leader in the field of web development.</p>
-          <p>With a strong focus on mobile-first design, performance, and conversion, every project is a testament to excellence and creativity in the field of production.</p>
-        </div>
-        <div class="about-img">
-          <img src="me.jpg" alt="Abdul Rehman Satti" class="about-photo" referrerpolicy="no-referrer" />
-        </div>
-      </div>
-
-      <div class="about-band reveal" style="margin-top:clamp(48px,5vw,72px);">
-        <div class="about-img about-img-rev">
-          <div class="about-img-inner">
-            <div class="mock-device">
-              <div class="bar"></div>
-              <div class="block"></div>
-              <div class="dots"><span class="on"></span><span></span><span></span></div>
-            </div>
-            <p class="caption">Every page tested on real phones before launch.</p>
-          </div>
-        </div>
-        <div>
-          <h3>Delivering impactful &amp; engaging content</h3>
-          <p>We craft websites that not only capture attention but also drive meaningful engagement with your audience &mdash; turning visitors into paying customers.</p>
-          <p>From landing pages to full e-commerce stores, every build is optimized for speed, mobile screens, and WhatsApp-first communication that Pakistani businesses actually use.</p>
-        </div>
-      </div>
+  <!-- MARQUEE -->
+  <div class="mq" aria-hidden="true">
+    <div class="mq-in">
+      <span>Landing pages <i>&#10035;</i></span><span>Business websites <i>&#10035;</i></span><span>E-commerce stores <i>&#10035;</i></span><span>WhatsApp ordering <i>&#10035;</i></span><span>SEO-ready <i>&#10035;</i></span><span>Mobile-perfect <i>&#10035;</i></span>
+      <span>Landing pages <i>&#10035;</i></span><span>Business websites <i>&#10035;</i></span><span>E-commerce stores <i>&#10035;</i></span><span>WhatsApp ordering <i>&#10035;</i></span><span>SEO-ready <i>&#10035;</i></span><span>Mobile-perfect <i>&#10035;</i></span>
     </div>
-  </section>
+  </div>
 
-  <!-- PORTFOLIO -->
-  <section id="work">
-    <div class="container">
-      <div class="portfolio-header reveal">
-        <h3>Portfolio</h3>
-        <a class="btn btn-outline" href="#work">See More <span class="barr">&rarr;</span></a>
-      </div>
-      <div class="divider"></div>
-
-      <div class="gallery">
-        <div class="gallery-item reveal">
-          <img class="thumb" src="project-timecart.jpg" alt="TimeCart homepage" loading="lazy" />
-          <div class="overlay">
-            <h4>TimeCart</h4>
-            <p>Full-stack watch e-commerce store &mdash; catalog, cart, checkout, admin panel</p>
-            <a class="btn btn-primary" href="https://timecart-hh5m.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img class="thumb" src="project-skyline.jpg" alt="Skyline Realty homepage" loading="lazy" />
-          <div class="overlay">
-            <h4>Skyline Realty</h4>
-            <p>Multi-page real estate website with buy/rent search and listings</p>
-            <a class="btn btn-primary" href="https://skyline-realty-nu.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img class="thumb" src="project-carewell.jpg" alt="CareWell Clinic homepage" loading="lazy" />
-          <div class="overlay">
-            <h4>CareWell Clinic</h4>
-            <p>Clinic website with departments, doctor profiles and WhatsApp booking</p>
-            <a class="btn btn-primary" href="https://carewell-clinic-one.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img class="thumb" src="project-brightminds.jpg" alt="BrightMinds Academy homepage" loading="lazy" />
-          <div class="overlay">
-            <h4>BrightMinds Academy</h4>
-            <p>Education website with programs, mentor profiles and online admission</p>
-            <a class="btn btn-primary" href="https://brightminds-academy-green.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img class="thumb" src="project-ironforge-gym.jpg" alt="IronForge Fitness website homepage" loading="lazy" />
-          <div class="overlay">
-            <h4>IronForge Fitness</h4>
-            <p>Multi-page gym business website &mdash; programs, pricing, trainers, contact</p>
-            <a class="btn btn-primary" href="https://gym-lovat-three.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
-          </div>
-        </div>
-
-        <div class="gallery-item reveal">
-          <img class="thumb" src="project-ironforge-gymlanding.jpg" alt="IronForge Fitness landing page" loading="lazy" />
-          <div class="overlay">
-            <h4>IronForge Landing</h4>
-            <p>Single-page gym trial landing &mdash; pricing, testimonials, WhatsApp lead capture</p>
-            <a class="btn btn-primary" href="https://gym-landing-theta-seven.vercel.app" target="_blank" rel="noopener">Visit site <span class="barr">&rarr;</span></a>
-          </div>
+  <!-- WHAT I DO -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-intro reveal">
+        <h2 class="giant">What I Do</h2>
+        <div class="meta">
+          <span class="lbl">(01) &mdash; Services</span>
+          <p class="desc">One person, full discipline: strategy, design, code and launch. No templates &mdash; every build is hand-coded and tested on real phones before it goes live.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="kicker">Services</span>
-        <h2>Simple pricing, no surprises.</h2>
-        <p>Pick the package that fits. Every site is mobile-ready, search-engine friendly and connected to WhatsApp so customers can reach you instantly.</p>
-      </div>
       <div class="serv-grid">
         <article class="serv-card reveal">
-          <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-          <h3>Landing Page</h3>
-          <p>A single conversion-focused page for promotions, products or campaigns. Live within days.</p>
-          <div class="serv-price">From Rs. 12,000 <small>/ delivered in 2&ndash;3 days</small></div>
-        </article>
-        <article class="serv-card popular reveal">
-          <span class="ribbon">Most popular</span>
-          <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
-          <h3>Business Website</h3>
-          <p>Up to 5 pages: home, about, services, gallery, contact. The professional online presence every business needs.</p>
-          <div class="serv-price">From Rs. 25,000 <small>/ delivered in 3&ndash;5 days</small></div>
-        </article>
-        <article class="serv-card reveal">
-          <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
-          <h3>E-Commerce Store</h3>
-          <p>A full online store &mdash; products, cart, checkout (COD &amp; bank transfer), order tracking, admin panel.</p>
-          <div class="serv-price">From Rs. 60,000 <small>/ delivered in 7&ndash;10 days</small></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE BUILDER -->
-  <section id="builder">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="kicker">Instant quote &middot; no sign-up</span>
-        <h2>Build your website quote in 10 seconds.</h2>
-        <p>Pick what you need, watch the price update live, and send the quote straight to my WhatsApp. No email, no forms, no commitment.</p>
-      </div>
-      <div class="bld-grid reveal">
-        <div class="bld-controls">
-          <fieldset class="bld-group">
-            <legend>1 &middot; What are you building?</legend>
-            <div class="bld-row cols" id="typeRow">
-              <label class="pc"><input type="radio" name="type" value="landing" /><span class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span class="pc-name">Landing page</span><span class="pc-price">Rs. 12,000</span><span class="pc-sub">1 page &middot; 2&ndash;3 days</span></label>
-              <label class="pc"><input type="radio" name="type" value="business" checked /><span class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span><span class="pc-name">Business website</span><span class="pc-price">Rs. 25,000</span><span class="pc-sub">5 pages &middot; 3&ndash;5 days</span></label>
-              <label class="pc"><input type="radio" name="type" value="ecommerce" /><span class="pc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span><span class="pc-name">E-commerce store</span><span class="pc-price">Rs. 60,000</span><span class="pc-sub">store + admin &middot; 7&ndash;10 days</span></label>
-            </div>
-          </fieldset>
-          <fieldset class="bld-group" id="pagesGroup">
-            <legend>2 &middot; Extra pages <small>Business websites already include 5 pages</small></legend>
-            <div class="stepper">
-              <button id="decPages" aria-label="Remove an extra page">&minus;</button>
-              <span id="pagesCount" aria-live="polite">0</span>
-              <button id="incPages" aria-label="Add an extra page">+</button>
-              <span class="stepper-note">&times; Rs. 3,500 per page</span>
-            </div>
-          </fieldset>
-          <fieldset class="bld-group">
-            <legend>3 &middot; Add-ons</legend>
-            <div class="bld-row" id="addonsRow">
-              <label class="ac"><input type="checkbox" data-label="WhatsApp ordering / booking" data-price="3000" /><span class="ac-dot">&#10003;</span><span>WhatsApp ordering / booking</span><b>+Rs. 3,000</b></label>
-              <label class="ac"><input type="checkbox" data-label="SEO + Google analytics setup" data-price="3000" /><span class="ac-dot">&#10003;</span><span>SEO + Google analytics setup</span><b>+Rs. 3,000</b></label>
-              <label class="ac"><input type="checkbox" data-label="Bilingual (Urdu / English) content" data-price="4000" /><span class="ac-dot">&#10003;</span><span>Bilingual (Urdu / English) content</span><b>+Rs. 4,000</b></label>
-              <label class="ac"><input type="checkbox" data-label="Priority 48-hour delivery" data-price="5000" /><span class="ac-dot">&#10003;</span><span>Priority 48-hour delivery</span><b>+Rs. 5,000</b></label>
-            </div>
-          </fieldset>
-        </div>
-        <aside class="bld-summary">
-          <h3>Your quote</h3>
-          <ul id="sumLines" aria-live="polite"></ul>
-          <div class="sum-total"><span>Total</span><strong id="sumTotal">Rs. 25,000</strong></div>
-          <ul class="bld-offers">
-            <li>Free design preview before any payment</li>
-            <li>Mobile-perfect build, tested on real phones</li>
-            <li>WhatsApp chat button on your site</li>
-            <li>First month of support included</li>
+          <span class="n"><b>(01)</b> / Landing pages</span>
+          <h3>Landing pages</h3>
+          <ul>
+            <li>Single conversion-focused page</li>
+            <li>Hero, offer and clear CTA</li>
+            <li>WhatsApp lead capture</li>
+            <li>Live in 2&ndash;3 days</li>
           </ul>
-          <a class="btn btn-primary bld-btn" id="quoteBtn" href="#" target="_blank" rel="noopener">Send this quote on WhatsApp <span class="barr">&rarr;</span></a>
-          <p class="sum-note">Final price is always confirmed with you on WhatsApp &mdash; no hidden surprises.</p>
-        </aside>
+          <div class="foot">
+            <span class="price">From Rs. 12,000<small>one page &middot; promotion ready</small></span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </div>
+        </article>
+
+        <article class="serv-card reveal">
+          <span class="n"><b>(02)</b> / Business websites</span>
+          <h3>Business websites</h3>
+          <ul>
+            <li>Up to 5 pages</li>
+            <li>Home, about, services, gallery, contact</li>
+            <li>WhatsApp booking &amp; contact</li>
+            <li>Live in 3&ndash;5 days</li>
+          </ul>
+          <div class="foot">
+            <span class="price">From Rs. 25,000<small>the pro online presence</small></span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </div>
+        </article>
+
+        <article class="serv-card reveal">
+          <span class="n"><b>(03)</b> / E-commerce stores</span>
+          <h3>E-commerce stores</h3>
+          <ul>
+            <li>Full online store</li>
+            <li>Products &amp; catalog</li>
+            <li>Cart, COD &amp; bank transfer</li>
+            <li>Order tracking + admin panel</li>
+            <li>Live in 7&ndash;10 days</li>
+          </ul>
+          <div class="foot">
+            <span class="price">From Rs. 60,000<small>sell all over Pakistan</small></span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="sec-cta reveal">
+        <a class="start" href="#" data-open-quote>Build your quote &mdash; takes 10 seconds <span class="arr">&rarr;</span></a>
       </div>
     </div>
   </section>
 
   <!-- PROCESS -->
-  <section id="process">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="kicker">Process</span>
-        <h2>From idea to live site, in days.</h2>
+  <section class="sec" id="process">
+    <div class="wrap">
+      <div class="sec-intro reveal">
+        <h2 class="giant">My Approach</h2>
+        <div class="meta">
+          <span class="lbl">(02) &mdash; Process</span>
+          <p class="desc">From first message on WhatsApp to a live website in under a week. You approve every step &mdash; no surprises, no endless revisions.</p>
+        </div>
       </div>
-      <div class="steps" style="counter-reset:step;">
-        <div class="step reveal"><h3>Discover</h3><p>We talk on WhatsApp. I learn your business, your customers and your goal for the site.</p><span class="day">Day 1 &middot; 30 min</span></div>
-        <div class="step reveal"><h3>Design preview</h3><p>You see a design of your site before any development. We refine until you love it.</p><span class="day">Day 1&ndash;2</span></div>
-        <div class="step reveal"><h3>Build</h3><p>I develop and test every page, make it mobile-perfect and fast, and wire up WhatsApp/contact.</p><span class="day">Day 2&ndash;4</span></div>
-        <div class="step reveal"><h3>Launch &amp; support</h3><p>Your site goes live with your own web address. I stay available on WhatsApp after launch.</p><span class="day">Day 3&ndash;5</span></div>
+
+      <div class="app-rows reveal">
+        <div class="app-row">
+          <span class="n">(01)</span>
+          <span class="name">Discovery</span>
+          <span class="pair"><b>WhatsApp call &middot; 30 min</b>Requirements / Strategy</span>
+          <span class="arr" aria-hidden="true">&rarr;</span>
+        </div>
+        <div class="app-row">
+          <span class="n">(02)</span>
+          <span class="name">Design preview</span>
+          <span class="pair"><b>You approve before any code</b>Layout / Brand</span>
+          <span class="arr" aria-hidden="true">&rarr;</span>
+        </div>
+        <div class="app-row">
+          <span class="n">(03)</span>
+          <span class="name">Build &amp; test</span>
+          <span class="pair"><b>Mobile-perfect, fast, live</b>Code / Responsive</span>
+          <span class="arr" aria-hidden="true">&rarr;</span>
+        </div>
+        <div class="app-row">
+          <span class="n">(04)</span>
+          <span class="name">Launch &amp; support</span>
+          <span class="pair"><b>Your own web address</b>Deploy / Care</span>
+          <span class="arr" aria-hidden="true">&rarr;</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="reveal">
-          <h2>Get in Touch</h2>
-          <p class="sub">Whether you're looking to collaborate on an exciting project, discuss creative ideas, or simply connect, I'd love to hear from you.</p>
-          <a class="btn btn-primary" href="https://wa.me/923165661622" target="_blank" rel="noopener" style="background:#F5F5F0;color:var(--ink);margin-bottom:28px;">Chat on WhatsApp <span class="barr">&rarr;</span></a>
+  <!-- SELECTED WORK -->
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-intro reveal">
+        <div>
+          <span class="lbl" style="display:block;margin-bottom:18px">(03) &mdash; Selected work</span>
+          <h2 class="giant">Selected Work</h2>
         </div>
-        <form class="contact-form reveal" onsubmit="sendWa(event)">
-          <div class="field">
-            <label for="fname">First name</label>
-            <input id="fname" name="fname" type="text" required autocomplete="given-name" placeholder="e.g. Ali" />
+        <div class="meta">
+          <p class="desc">Six full builds, each live on its own address. Open them, click around &mdash; every page is real, responsive and ready to show your customers.</p>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button type="button" class="fchip" data-filter="all" aria-pressed="true">All (6)</button>
+            <button type="button" class="fchip" data-filter="website" aria-pressed="false">Business (4)</button>
+            <button type="button" class="fchip" data-filter="ecommerce" aria-pressed="false">E-commerce (1)</button>
+            <button type="button" class="fchip" data-filter="landing" aria-pressed="false">Landing (1)</button>
           </div>
-          <div class="field">
-            <label for="lname">Last name</label>
-            <input id="lname" name="lname" type="text" required autocomplete="family-name" placeholder="e.g. Ahmed" />
+        </div>
+      </div>
+
+      <div class="work-grid" id="workGrid">
+        <article class="wk reveal" data-cat="ecommerce" data-name="TimeCart">
+          <figure><img src="project-timecart.jpg" alt="TimeCart e-commerce store homepage" loading="lazy" /></figure>
+          <div class="meta">
+            <div class="t">TimeCart<small>Full-stack watch store &middot; React</small></div>
+            <a class="go" href="https://timecart-hh5m.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" placeholder="e.g. ali@example.com" />
+        </article>
+        <article class="wk reveal" data-cat="website" data-name="Skyline Realty">
+          <figure><img src="project-skyline.jpg" alt="Skyline Realty website homepage" loading="lazy" /></figure>
+          <div class="meta">
+            <div class="t">Skyline Realty<small>Real estate &middot; buy / sell / rent</small></div>
+            <a class="go" href="https://skyline-realty-nu.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
-          <div class="field">
-            <label for="phone">Phone (optional)</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 0300 1234567" />
+        </article>
+        <article class="wk reveal" data-cat="website" data-name="CareWell Clinic">
+          <figure><img src="project-carewell.jpg" alt="CareWell Clinic website homepage" loading="lazy" /></figure>
+          <div class="meta">
+            <div class="t">CareWell Clinic<small>Clinic &middot; WhatsApp booking</small></div>
+            <a class="go" href="https://carewell-clinic-one.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
-          <div class="field">
-            <label for="msg">Message</label>
-            <textarea id="msg" name="msg" rows="4" placeholder="Tell me about your project..." required></textarea>
+        </article>
+        <article class="wk reveal" data-cat="website" data-name="BrightMinds Academy">
+          <figure><img src="project-brightminds.jpg" alt="BrightMinds Academy website homepage" loading="lazy" /></figure>
+          <div class="meta">
+            <div class="t">BrightMinds Academy<small>Education &middot; online admission</small></div>
+            <a class="go" href="https://brightminds-academy-green.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
-          <button class="btn btn-primary" type="submit">Send via WhatsApp <span class="barr">&rarr;</span></button>
-          <p class="form-note">Your message opens in WhatsApp &mdash; no forms lost, no spam.</p>
-        </form>
+        </article>
+        <article class="wk reveal" data-cat="website" data-name="IronForge Fitness">
+          <figure><img src="project-ironforge-gym.jpg" alt="IronForge Fitness gym website homepage" loading="lazy" /></figure>
+          <div class="meta">
+            <div class="t">IronForge Fitness<small>Gym &middot; 4-page business site</small></div>
+            <a class="go" href="https://gym-lovat-three.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
+          </div>
+        </article>
+        <article class="wk reveal" data-cat="landing" data-name="IronForge Landing">
+          <figure><img src="project-ironforge-gymlanding.jpg" alt="IronForge Fitness landing page" loading="lazy" /></figure>
+          <div class="meta">
+            <div class="t">IronForge Landing<small>Campaign page &middot; lead capture</small></div>
+            <a class="go" href="https://gym-landing-theta-seven.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE VISION -->
+  <section class="sec sec-light" id="about">
+    <div class="wrap">
+      <h2 class="cv-head reveal">Core <span class="ac">Vision</span></h2>
+      <div class="cv-grid">
+        <div class="cv-copy reveal">
+          <p><strong>Satti Studio is a one-person design-and-code practice</strong> built on a simple belief: a website is not a decoration &mdash; it is the hardest-working salesperson a business can hire.</p>
+          <p>With years of experience across diverse industries, I handle every project end to end &mdash; planning, design, development, testing and launch. My approach goes beyond the usual client&ndash;developer relationship: every build is a partnership that starts on WhatsApp, stays honest, and keeps working for the client long after launch.</p>
+          <p>Every page I ship is mobile-first, fast and tuned to capture leads &mdash; because in Pakistan, your customer finds you on their phone first. I test every build on real devices before you ever see it.</p>
+          <p class="cv-ital">&ldquo;Let&rsquo;s challenge conventions and build what&rsquo;s next for your business.&rdquo;</p>
+        </div>
+        <figure class="cv-photo reveal">
+          <img src="me.jpg" alt="Abdul Rehman Satti, founder of Satti Studio" referrerpolicy="no-referrer" />
+          <figcaption><b>Abdul Rehman Satti</b><span>Founder &middot; Developer</span></figcaption>
+        </figure>
+      </div>
+      <div class="cv-stats reveal">
+        <div><div class="num">6+</div><div class="lab">Live demo builds</div></div>
+        <div><div class="num">5</div><div class="lab">Days avg. delivery</div></div>
+        <div><div class="num">100%</div><div class="lab">WhatsApp-first workflow</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORS -->
+  <section class="sec" id="sectors" style="padding-top:clamp(50px,7vw,90px);padding-bottom:clamp(50px,7vw,90px)">
+    <div class="mq mq-rev" aria-hidden="true">
+      <div class="mq-in">
+        <span>Restaurants <i>&#10035;</i></span><span>Beauty salons <i>&#10035;</i></span><span>Gyms &amp; fitness <i>&#10035;</i></span><span>Clinics <i>&#10035;</i></span><span>Schools &amp; academies <i>&#10035;</i></span><span>Real estate <i>&#10035;</i></span><span>Retail <i>&#10035;</i></span><span>E-commerce <i>&#10035;</i></span>
+        <span>Restaurants <i>&#10035;</i></span><span>Beauty salons <i>&#10035;</i></span><span>Gyms &amp; fitness <i>&#10035;</i></span><span>Clinics <i>&#10035;</i></span><span>Schools &amp; academies <i>&#10035;</i></span><span>Real estate <i>&#10035;</i></span><span>Retail <i>&#10035;</i></span><span>E-commerce <i>&#10035;</i></span>
+      </div>
+    </div>
+    <p class="sec-note">Every niche. One standard: mobile-perfect and built to win customers.</p>
+  </section>
+
+  <!-- TOOLKIT -->
+  <section class="sec" id="toolkit">
+    <div class="wrap">
+      <div class="tk-head reveal">
+        <h2 class="giant">The Stack</h2>
+        <span class="sub">tools I actually ship with.</span>
+      </div>
+      <div class="tk-grid reveal">
+        <div class="tk"><span class="n">[01]</span><b>HTML5</b></div>
+        <div class="tk"><span class="n">[02]</span><b>CSS3</b></div>
+        <div class="tk"><span class="n">[03]</span><b>JavaScript</b></div>
+        <div class="tk"><span class="n">[04]</span><b>React</b></div>
+        <div class="tk"><span class="n">[05]</span><b>Next.js</b></div>
+        <div class="tk"><span class="n">[06]</span><b>TypeScript</b></div>
+        <div class="tk"><span class="n">[07]</span><b>Tailwind CSS</b></div>
+        <div class="tk"><span class="n">[08]</span><b>Python</b></div>
+        <div class="tk"><span class="n">[09]</span><b>FastAPI</b></div>
+        <div class="tk"><span class="n">[10]</span><b>SQL</b></div>
+        <div class="tk"><span class="n">[11]</span><b>Git &amp; GitHub</b></div>
+        <div class="tk"><span class="n">[12]</span><b>Vercel</b></div>
+        <div class="tk"><span class="n">[13]</span><b>REST APIs</b></div>
+        <div class="tk"><span class="n">[14]</span><b>SEO basics</b></div>
+        <div class="tk"><span class="n">[15]</span><b>Figma slices</b></div>
+        <div class="tk"><span class="n">[16]</span><b>WhatsApp Business</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KICK OFF -->
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="kick">
+        <div class="reveal">
+          <h2 class="giant">Let&rsquo;s kick off<span class="serif2">your project today.</span></h2>
+          <p class="hero-lead" style="max-width:none">Tell me what you&rsquo;re building. You&rsquo;ll get an honest answer, a clear price and a live website &mdash; all on WhatsApp. No meetings, no email chains, no commitment.</p>
+        </div>
+        <div class="col-r reveal">
+          <div class="email-row">
+            <div class="k">WhatsApp &mdash; quickest</div>
+            <a class="v" href="https://wa.me/923165661622" target="_blank" rel="noopener">+92 316 566 1622 <span class="arr" aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="email-row">
+            <div class="k">Email</div>
+            <a class="vv" href="mailto:satti04rehman@gmail.com">satti04rehman@gmail.com</a>
+          </div>
+          <div class="email-row">
+            <div class="k">Based in</div>
+            <div class="vv">Lahore, Pakistan &middot; serving clients nationwide</div>
+          </div>
+          <div class="kick-cta">
+            <a class="kickbtn" href="#" data-open-quote>Get free quote <span class="arr" aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-left">
-        <a class="brand" href="#top">Satti Web Studio</a>
-        <div class="contact-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.63a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.45-1.23a2 2 0 0 1 2.11-.45c.85.32 1.73.54 2.63.66A2 2 0 0 1 22 16.92z"/></svg>
-          <span>+92 316 566 1622</span>
-        </div>
-        <div class="contact-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-          <span>satti04rehman@gmail.com</span>
-        </div>
-        <div class="contact-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Pakistan &middot; Serving clients nationwide</span>
-        </div>
-        <div class="footer-socials">
-          <a href="https://wa.me/923165661622" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.5.7-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.1.1.8-.1 1.3z"/></svg></a>
-          <a href="https://github.com/satti04rehman" target="_blank" rel="noopener" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-right">
-        <h4>Stay Connected with Us</h4>
-        <div class="newsletter">
-          <input type="email" placeholder="Enter your email" aria-label="Email for newsletter" />
-          <button type="button">Subscribe</button>
-        </div>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <div class="f-meta">&copy; 2026 Satti Studio &middot; Abdul Rehman Satti &middot; Lahore, Pakistan</div>
+      <div class="foot-socials">
+        <a href="https://github.com/satti04rehman" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12zm-5.5 17.3c-.045.2-.27.26-.41.12-.14-.14-.2-.41-.14-.61.045-.2.27-.26.41-.12.14.14.2.41.14.61zm1.21 1.02c-.12.18-.42.13-.6-.11-.17-.24-.2-.55-.07-.73.13-.18.42-.13.6.11.17.24.2.55.07.73zm1.36.12c-.02.22-.28.32-.55.24-.27-.09-.45-.34-.42-.56.02-.22.28-.32.55-.23.27.08.45.33.42.55zm3.59-1.08c-.11.2-.41.22-.66.06-.25-.15-.36-.43-.25-.63.11-.2.41-.22.66-.05.25.15.37.44.25.62zm1.42-.06c.04.19-.16.44-.46.45-.3.02-.56-.19-.6-.38-.04-.2.16-.45.45-.46.3-.01.57.2.61.39z"/></svg>
+        </a>
+        <a href="https://wa.me/923165661622" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.5.7-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.1.1.8-.1 1.3z"/></svg>
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Abdul Rehman Satti &middot; Satti Web Studio &middot; Pakistan</div>
   </div>
 </footer>
 
 <a class="wa-fab" href="https://wa.me/923165661622" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.5.7-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.1.1.8-.1 1.3z"/></svg>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.5.7-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.1.1.8-.1 1.3z"/></svg>
 </a>
 
+<!-- ===== QUOTE MODAL ===== -->
+<div class="modal" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+  <div class="modal-in">
+    <button type="button" class="mod-close" id="quoteClose" aria-label="Close quote builder">&times;</button>
+    <h3 id="quoteTitle">Build your quote.</h3>
+    <div class="bld-cols" id="typeRow">
+      <label class="pc"><input type="radio" name="ptype" value="landing" data-name="Landing page" data-price="12000" data-page="1 page" data-days="2&ndash;3 days" /><span class="row1"><span class="pc-name">Landing page</span><span class="pc-price">Rs. 12,000</span></span><span class="pc-sub">1 page &middot; 2&ndash;3 days</span></label>
+      <label class="pc"><input type="radio" name="ptype" value="business" checked data-name="Business website" data-price="25000" data-page="5 pages" data-days="3&ndash;5 days" /><span class="row1"><span class="pc-name">Business website</span><span class="pc-price">Rs. 25,000</span></span><span class="pc-sub">5 pages &middot; 3&ndash;5 days &middot; most popular</span></label>
+      <label class="pc"><input type="radio" name="ptype" value="ecommerce" data-name="E-commerce store" data-price="60000" data-page="store + admin" data-days="7&ndash;10 days" /><span class="row1"><span class="pc-name">E-commerce store</span><span class="pc-price">Rs. 60,000</span></span><span class="pc-sub">store + admin panel &middot; 7&ndash;10 days</span></label>
+    </div>
+
+    <div class="bld-sec">
+      <div class="mod-legend">Extra pages (business websites)</div>
+      <div class="stepper">
+        <button type="button" id="decPages" aria-label="Remove an extra page">&minus;</button>
+        <span class="pagesCnt" id="pagesCount" aria-live="polite">0</span>
+        <button type="button" id="incPages" aria-label="Add an extra page">+</button>
+        <span class="note">&times; Rs. 3,500 per page</span>
+      </div>
+    </div>
+
+    <div class="bld-sec">
+      <div class="mod-legend">Add-ons</div>
+      <div class="addons">
+        <label class="ac"><input type="checkbox" data-label="WhatsApp ordering / booking" data-price="3000" /><span class="tick" aria-hidden="true">&#10003;</span><span class="ac-t">WhatsApp ordering / booking</span><b>+Rs. 3,000</b></label>
+        <label class="ac"><input type="checkbox" data-label="SEO + Google analytics setup" data-price="3000" /><span class="tick" aria-hidden="true">&#10003;</span><span class="ac-t">SEO + Google analytics setup</span><b>+Rs. 3,000</b></label>
+        <label class="ac"><input type="checkbox" data-label="Bilingual Urdu / English content" data-price="4000" /><span class="tick" aria-hidden="true">&#10003;</span><span class="ac-t">Bilingual Urdu / English content</span><b>+Rs. 4,000</b></label>
+        <label class="ac"><input type="checkbox" data-label="Priority 48-hour delivery" data-price="5000" /><span class="tick" aria-hidden="true">&#10003;</span><span class="ac-t">Priority 48-hour delivery</span><b>+Rs. 5,000</b></label>
+      </div>
+    </div>
+
+    <div class="bld-sec">
+      <div class="mod-legend">Anything else? (optional)</div>
+      <textarea id="quoteMsg" rows="2" placeholder="e.g. a salon website for my shop in Lahore..."></textarea>
+    </div>
+
+    <div class="bld-total"><span>Estimated total</span><strong id="sumTotal">Rs. 25,000</strong></div>
+    <button type="button" class="bld-send" id="quoteSend">Send on WhatsApp <span aria-hidden="true">&rarr;</span></button>
+    <p class="bld-note">Opens WhatsApp with your quote. Final price is confirmed with you directly &mdash; no hidden charges.</p>
+  </div>
+</div>
+
 <script>
+(function(){
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Mobile menu
+  /* ---- Typewriter hero line ---- */
+  const ty = document.getElementById("typeText");
+  const msg = "> PAKISTAN-BASED FREELANCE WEB DEVELOPER";
+  if (ty && !reduceMotion) {
+    let i = 0;
+    const tick = () => {
+      ty.textContent = msg.slice(0, i++);
+      if (i <= msg.length) setTimeout(tick, 26);
+    };
+    setTimeout(tick, 300);
+  } else if (ty) { ty.textContent = msg; }
+
+  /* ---- Mobile menu ---- */
   const menuBtn = document.getElementById("menuBtn");
   const navLinks = document.getElementById("navLinks");
-  const linkItems = navLinks.querySelectorAll("a");
-  function closeMenu() { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+  const closeMenu = () => { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); };
   menuBtn.addEventListener("click", () => {
     const open = navLinks.classList.toggle("open");
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
   });
-  linkItems.forEach((a) => a.addEventListener("click", closeMenu));
-  window.addEventListener("resize", () => { if (window.innerWidth > 900) closeMenu(); });
+  navLinks.querySelectorAll("a, button").forEach((el) => el.addEventListener("click", closeMenu));
+  window.addEventListener("resize", () => { if (window.innerWidth > 880) closeMenu(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
-  // Reveal on scroll
+  /* ---- Reveal on scroll ---- */
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-  // Stagger grids
-  document.querySelectorAll(".gallery, .serv-grid, .steps").forEach((g) =>
-    [...g.children].forEach((el, i) => { if (el.classList.contains("reveal")) el.style.transitionDelay = (i * 80) + "ms"; })
-  );
-
-  // Scroll progress bar
+  /* ---- Scroll progress ---- */
   const sp = document.getElementById("sp");
   const onScroll = () => {
     const h = document.documentElement;
-    if (sp) sp.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
+    sp.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + "%";
   };
   window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
-  // Word reveal
-  if (!reduceMotion) {
-    document.querySelectorAll(".hero h1 .word > span").forEach((s, i) => {
-      s.style.animationDelay = `${0.15 + i * 0.08}s`;
-    });
-  }
+  /* ---- Filters ---- */
+  const chips = document.querySelectorAll(".fchip");
+  const cards = document.querySelectorAll(".wk");
+  chips.forEach((c) => c.addEventListener("click", () => {
+    chips.forEach((x) => x.setAttribute("aria-pressed", "false"));
+    c.setAttribute("aria-pressed", "true");
+    const f = c.dataset.filter;
+    cards.forEach((k) => { k.classList.toggle("hide", f !== "all" && k.dataset.cat !== f); });
+  }));
 
-  // Contact form → WhatsApp
-  function sendWa(e) {
-    e.preventDefault();
-    const fname = e.target.fname.value.trim();
-    const lname = e.target.lname.value.trim();
-    const email = e.target.email.value.trim();
-    const phone = e.target.phone.value.trim();
-    const msg = e.target.msg.value.trim();
-    const name = `${fname} ${lname}`.trim();
-    const text = `Hello Satti Web Studio!%0A%0AI'm ${encodeURIComponent(name)} (${encodeURIComponent(email)})${phone ? '%0APhone: ' + encodeURIComponent(phone) : ''}.%0A%0A${encodeURIComponent(msg)}`;
-    window.open(`https://wa.me/923165661622?text=${text}`, "_blank");
-  }
+  /* ---- Quote builder ---- */
+  const modal = document.getElementById("quoteModal");
+  const qClose = document.getElementById("quoteClose");
+  const qOpenBtns = document.querySelectorAll("[data-open-quote]");
+  const quoteMsg = document.getElementById("quoteMsg");
+  const sumTotal = document.getElementById("sumTotal");
+  const pagesCount = document.getElementById("pagesCount");
+  const fmt = (n) => "Rs. " + n.toLocaleString("en-PK");
 
-  // ---------- Quote builder ----------
-  const BLD = {
-    P: { landing: 12000, business: 25000, ecommerce: 60000 },
-    NAME: { landing: "Landing page", business: "Business website", ecommerce: "E-commerce store" },
-    PAGE: { landing: "1 page", business: "5 pages", ecommerce: "Full store + admin" },
-    DAYS: { landing: "2–3 days", business: "3–5 days", ecommerce: "7–10 days" },
-    EXTRA: 3500,
-  };
-  const state = { type: "business", pages: 0, addons: [] };
-  const fmtMoney = (n) => "Rs. " + n.toLocaleString("en-PK");
-  let prevTotal = 25000;
+  let pages = 0;
+  const typeEls = [...document.querySelectorAll('input[name="ptype"]')];
+  const addonEls = [...document.querySelectorAll("#quoteModal .ac input")];
+  const P = { landing: 12000, business: 25000, ecommerce: 60000 };
+  const PNAME = { landing: "Landing page", business: "Business website", ecommerce: "E-commerce store" };
+  const PPAGE = { landing: "1 page", business: "5 pages", ecommerce: "Full store + admin" };
+  const EXTRA = 3500;
 
-  function bldBase() { return BLD.P[state.type]; }
-  function bldPagesCost() { return state.type === "business" ? state.pages * BLD.EXTRA : 0; }
-  function bldAddonsCost() { return state.addons.reduce((s, a) => s + a.price, 0); }
-  function bldTotal() { return bldBase() + bldPagesCost() + bldAddonsCost(); }
+  function curType() { const t = typeEls.find((r) => r.checked); return t ? t.value : "business"; }
+  function base() { return P[curType()]; }
+  function pagesCost() { return curType() === "business" ? pages * EXTRA : 0; }
+  function addonsCost() { return addonEls.filter((a) => a.checked).reduce((s, a) => s + Number(a.dataset.price), 0); }
+  function total() { return base() + pagesCost() + addonsCost(); }
+  function render() { sumTotal.textContent = fmt(total()); }
+  typeEls.forEach((r) => r.addEventListener("change", render));
+  addonEls.forEach((a) => a.addEventListener("change", render));
+  document.getElementById("incPages").addEventListener("click", () => { pages++; pagesCount.textContent = pages; render(); });
+  document.getElementById("decPages").addEventListener("click", () => { pages = Math.max(0, pages - 1); pagesCount.textContent = pages; render(); });
 
-  function renderBuilder(animate) {
-    const linesEl = document.getElementById("sumLines");
-    const out = [];
-    out.push(`<li><span>${BLD.NAME[state.type]} &middot; ${BLD.PAGE[state.type]}</span><span class="price">${fmtMoney(bldBase())}</span></li>`);
-    if (bldPagesCost() > 0) out.push(`<li class="dim"><span>Extra pages &times;${state.pages}</span><span class="price">${fmtMoney(bldPagesCost())}</span></li>`);
-    state.addons.forEach((a) => out.push(`<li><span>${a.label}</span><span class="price">${fmtMoney(a.price)}</span></li>`));
-    linesEl.innerHTML = out.join("");
-
-    const totalEl = document.getElementById("sumTotal");
-    const target = bldTotal();
-    if (animate && !reduceMotion && target !== prevTotal) {
-      const from = prevTotal;
-      const t0 = performance.now(), dur = 450;
-      (function tick(t) {
-        const p = Math.min((t - t0) / dur, 1);
-        const e = 1 - Math.pow(1 - p, 3);
-        totalEl.textContent = fmtMoney(Math.round(from + (target - from) * e));
-        if (p < 1) requestAnimationFrame(tick);
-      })(t0);
-    } else {
-      totalEl.textContent = fmtMoney(target);
-    }
-    prevTotal = target;
-    updateQuoteBtn();
-  }
-
-  function buildQuoteMsg() {
+  function buildMsg() {
     const L = [];
-    L.push("Website quote request for Satti Web Studio:");
-    L.push(`• ${BLD.NAME[state.type]} — ${fmtMoney(bldBase())} (${BLD.PAGE[state.type]}, ${BLD.DAYS[state.type]})`);
-    if (bldPagesCost() > 0) L.push(`• Extra pages ×${state.pages} — ${fmtMoney(bldPagesCost())}`);
-    state.addons.forEach((a) => L.push(`• ${a.label} — ${fmtMoney(a.price)}`));
-    L.push(`Total: ${fmtMoney(bldTotal())}`);
-    L.push("");
-    L.push("Please send me my free plan.");
+    L.push("Website quote request for Satti Studio:");
+    L.push("• " + PNAME[curType()] + " — " + fmt(base()) + " (" + PPAGE[curType()] + ")");
+    if (pagesCost() > 0) L.push("• Extra pages ×" + pages + " — " + fmt(pagesCost()));
+    addonEls.filter((a) => a.checked).forEach((a) => L.push("• " + a.dataset.label + " — " + fmt(Number(a.dataset.price))));
+    L.push("Total: " + fmt(total()));
+    const extra = quoteMsg.value.trim();
+    if (extra) L.push("\n" + extra);
+    L.push("\nPlease send me my free plan.");
     return encodeURIComponent(L.join("\n"));
   }
-
-  function updateQuoteBtn() {
-    const btn = document.getElementById("quoteBtn");
-    if (btn) btn.href = `https://wa.me/923165661622?text=${buildQuoteMsg()}`;
+  function openQuote() {
+    quoteMsg.value = "";
+    modal.classList.add("open");
+    qClose.focus();
+    document.body.style.overflow = "hidden";
   }
-
-  function syncBuilderUI() {
-    document.getElementById("pagesGroup").classList.toggle("dim", state.type !== "business");
+  function closeQuote() {
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
   }
-
-  document.querySelectorAll('input[name="type"]').forEach((r) => {
-    r.addEventListener("change", () => { if (!r.checked) return; state.type = r.value; syncBuilderUI(); renderBuilder(true); });
+  qOpenBtns.forEach((b) => b.addEventListener("click", (e) => { e.preventDefault(); openQuote(); }));
+  qClose.addEventListener("click", closeQuote);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeQuote(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("open")) closeQuote(); });
+  document.getElementById("quoteSend").addEventListener("click", () => {
+    window.open("https://wa.me/923165661622?text=" + buildMsg(), "_blank");
   });
-
-  document.getElementById("incPages").addEventListener("click", () => { if (state.pages < 6) { state.pages++; renderBuilder(true); } });
-  document.getElementById("decPages").addEventListener("click", () => { if (state.pages > 0) { state.pages--; renderBuilder(true); } });
-
-  document.querySelectorAll("#addonsRow input").forEach((c) => {
-    c.addEventListener("change", () => {
-      const label = c.dataset.label, price = +c.dataset.price;
-      if (c.checked) { if (!state.addons.some((a) => a.label === label)) state.addons.push({ label, price }); }
-      else { state.addons = state.addons.filter((a) => a.label !== label); }
-      renderBuilder(true);
-    });
-  });
-
-  syncBuilderUI();
-  renderBuilder(false);
+})();
 </script>
 </body>
 </html>

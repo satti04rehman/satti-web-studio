@@ -3,17 +3,40 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Satti Studio — Design-first web development, Pakistan</title>
-<meta name="description" content="Satti Studio builds premium, mobile-perfect websites and e-commerce stores across Pakistan. Landing pages, business websites and online stores — delivered fast from Rs. 12,000." />
-<meta property="og:title" content="Satti Studio — Websites that turn browsers into buyers" />
-<meta property="og:description" content="Landing pages, business websites and online stores. Hand-coded, mobile-perfect, live in days." />
+<title>Satti Studio — Hand-coded websites in Rawalpindi, Pakistan</title>
+<meta name="description" content="Abdul Rehman Satti builds hand-coded websites for Pakistani businesses: landing pages from Rs. 12,000, business sites, and e-commerce stores with cart, cash on delivery and an admin panel." />
+<link rel="canonical" href="https://satti-web-studio.vercel.app/" />
+<meta property="og:title" content="Satti Studio — Hand-coded websites, no templates" />
+<meta property="og:description" content="Landing pages, business sites and online stores for Pakistani businesses. Written from scratch, live in days." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://satti-web-studio.vercel.app/" />
+<meta property="og:image" content="https://satti-web-studio.vercel.app/screenshot-hero.png" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#050505" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abdul Rehman Satti",
+  "url": "https://satti-web-studio.vercel.app/",
+  "image": "https://satti-web-studio.vercel.app/me.jpg",
+  "jobTitle": "Freelance Web Developer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rawalpindi",
+    "addressCountry": "PK"
+  },
+  "email": "mailto:satti04rehman@gmail.com",
+  "telephone": "+92-316-5661622",
+  "sameAs": ["https://github.com/satti04rehman"]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050505'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23F3F1EA' text-anchor='middle'%3ES%3C/text%3E%3Ccircle cx='54' cy='16' r='4' fill='%23E3D3B5'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Inter+Tight:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 :root{
   --bg:#050505; --bg2:#0B0B0B; --bg3:#121212;
   --ink:#F3F1EA; --mut:rgba(243,241,234,.55); --dim:rgba(243,241,234,.35);
@@ -167,7 +190,6 @@ header{position:fixed;top:0;left:0;right:0;z-index:200;mix-blend-mode:difference
 .cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px);align-items:start}
 .cv-copy p{font-size:16.5px;line-height:1.8;color:var(--lightmut);margin-bottom:20px;max-width:620px}
 .cv-copy p:first-child strong{color:var(--lightink);font-weight:600}
-.cv-copy .cv-ital{font-family:var(--f-serif);font-style:italic;font-size:clamp(22px,2.6vw,34px);line-height:1.4;color:var(--lightink);margin:34px 0 0}
 .cv-photo{border:1px solid rgba(16,16,16,.18);padding:14px}
 .cv-photo img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:top;}
 .cv-photo figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--lightmut)}
@@ -334,6 +356,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
   <section class="hero" id="top">
     <div class="wrap">
       <p class="type-line" id="typeLine" aria-hidden="true"><span id="typeText"></span><span class="curs"></span></p>
+      <p class="sr-only">Pakistan-based freelance web developer</p>
       <div class="hero-meta" id="heroMeta" data-reveal>
         <span>Rawalpindi, Pakistan</span>
         <span class="sep" aria-hidden="true">&#9670;</span>
@@ -345,8 +368,8 @@ textarea:focus{outline:none;border-color:var(--acc)}
         <span class="em">Web design &amp;</span>
         <span class="em">development</span>
       </h1>
-      <p class="tag-ital" id="heroItal" data-reveal>that turns browsers into buyers.</p>
-      <p class="hero-lead" id="heroLead" data-reveal>Freelance web developer in Pakistan. I craft premium digital experiences through design craft, functional tech, and strategic thinking &mdash; hand-coded, mobile-perfect, shipped in days.</p>
+      <p class="tag-ital" id="heroItal" data-reveal>No templates. No page builders.</p>
+      <p class="hero-lead" id="heroLead" data-reveal>I&rsquo;m Abdul, a freelance developer in Rawalpindi. I write every line myself &mdash; the layout, the WhatsApp buttons, and the store logic behind them. Ten of my builds are live below; open them on your phone before you message me.</p>
       <div class="hero-actions" id="heroActs" data-reveal>
         <a class="start" href="#" data-open-quote>Got a website on your mind? <span class="arr">&rarr;</span></a>
         <a class="lite" href="#work">See selected work</a>
@@ -355,7 +378,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
 
     <div class="slogan">
       <div class="wrap">
-        <p class="serif-word" id="slogan" data-reveal><span class="ac">Strategy.</span> Design. Code. Launch.</p>
+        <p class="serif-word" id="slogan" data-reveal>One message on WhatsApp to a <span class="ac">live site</span>.</p>
       </div>
     </div>
   </section>
@@ -363,8 +386,8 @@ textarea:focus{outline:none;border-color:var(--acc)}
   <!-- MARQUEE -->
   <div class="mq" aria-hidden="true">
     <div class="mq-in">
-      <span>Landing pages <i>&#10035;</i></span><span>Business websites <i>&#10035;</i></span><span>E-commerce stores <i>&#10035;</i></span><span>WhatsApp ordering <i>&#10035;</i></span><span>SEO-ready <i>&#10035;</i></span><span>Mobile-perfect <i>&#10035;</i></span>
-      <span>Landing pages <i>&#10035;</i></span><span>Business websites <i>&#10035;</i></span><span>E-commerce stores <i>&#10035;</i></span><span>WhatsApp ordering <i>&#10035;</i></span><span>SEO-ready <i>&#10035;</i></span><span>Mobile-perfect <i>&#10035;</i></span>
+      <span>Landing pages <i>&#10035;</i></span><span>Business websites <i>&#10035;</i></span><span>E-commerce stores <i>&#10035;</i></span><span>WhatsApp ordering <i>&#10035;</i></span><span>Cash on delivery <i>&#10035;</i></span><span>Built by hand <i>&#10035;</i></span>
+      <span>Landing pages <i>&#10035;</i></span><span>Business websites <i>&#10035;</i></span><span>E-commerce stores <i>&#10035;</i></span><span>WhatsApp ordering <i>&#10035;</i></span><span>Cash on delivery <i>&#10035;</i></span><span>Built by hand <i>&#10035;</i></span>
     </div>
   </div>
 
@@ -375,7 +398,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
         <h2 class="giant">What I Do</h2>
         <div class="meta">
           <span class="lbl">(01) &mdash; Services</span>
-          <p class="desc">One person, full discipline: strategy, design, code and launch. No page-generator templates &mdash; every build is hand-coded and tested on real phones before it goes live.</p>
+          <p class="desc">You talk to the person doing the work &mdash; no account manager, no handoff. Everything is hand-coded, so nothing is trapped inside a template and I can change any part of it when you ask.</p>
         </div>
       </div>
 
@@ -390,7 +413,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
             <li>Live in 2&ndash;3 days</li>
           </ul>
           <div class="foot">
-            <span class="price">From Rs. 12,000<small>one page &middot; promotion ready</small></span>
+            <span class="price">From Rs. 12,000<small>one page &middot; for a campaign or offer</small></span>
             <span class="arrow" aria-hidden="true">&rarr;</span>
           </div>
         </article>
@@ -405,7 +428,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
             <li>Live in 3&ndash;5 days</li>
           </ul>
           <div class="foot">
-            <span class="price">From Rs. 25,000<small>the pro online presence</small></span>
+            <span class="price">From Rs. 25,000<small>up to 5 pages &middot; your own address</small></span>
             <span class="arrow" aria-hidden="true">&rarr;</span>
           </div>
         </article>
@@ -440,7 +463,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
         <h2 class="giant">My Approach</h2>
         <div class="meta">
           <span class="lbl">(02) &mdash; Process</span>
-          <p class="desc">From first message on WhatsApp to a live website in under a week. You approve every step &mdash; no surprises, no endless revisions.</p>
+          <p class="desc">Most sites go live in three to five days; a full store takes closer to two weeks. You see the design before I write any code, and nothing goes live until you approve it.</p>
         </div>
       </div>
 
@@ -460,7 +483,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
         <div class="app-row">
           <span class="n">(03)</span>
           <span class="name">Build &amp; test</span>
-          <span class="pair"><b>Mobile-perfect, fast, live</b>Code / Responsive</span>
+          <span class="pair"><b>Tested on a real phone</b>Code / Responsive</span>
           <span class="arr" aria-hidden="true">&rarr;</span>
         </div>
         <div class="app-row">
@@ -482,7 +505,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
           <h2 class="giant">Selected Work</h2>
         </div>
         <div class="meta">
-          <p class="desc">Practice builds, each live on its own address so you can click through them. Built for learning, not delivered to clients &mdash; every page is responsive and works.</p>
+          <p class="desc">These are practice builds, not client work. I made them to learn, and each one is live on its own address so you can click straight through it. Open a few on your phone &mdash; that is how most of your customers will see them.</p>
           <div class="filters" role="group" aria-label="Filter projects">
             <button type="button" class="fchip" data-filter="all" aria-pressed="true">All (10)</button>
             <button type="button" class="fchip" data-filter="website" aria-pressed="false">Business (7)</button>
@@ -496,7 +519,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
         <article class="wk reveal" data-cat="website" data-name="Multi-Site Demo">
           <figure><img src="project-client-showcase.jpg" alt="Satti Studio multi-site demo homepage" loading="lazy" /></figure>
           <div class="meta">
-            <div class="t">Multi-Site Demo<small>practice build &middot; one template, 10 pages</small></div>
+            <div class="t">Multi-Site Demo<small>practice build &middot; 12 business sites, one page</small></div>
             <a class="go" href="https://client-showcase-psi.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
         </article>
@@ -510,21 +533,21 @@ textarea:focus{outline:none;border-color:var(--acc)}
         <article class="wk reveal" data-cat="website" data-name="Velour Beauty">
           <figure><img src="project-velour-salon.jpg" alt="Velour Beauty salon homepage" loading="lazy" /></figure>
           <div class="meta">
-            <div class="t">Velour Beauty<small>Premium salon + academy &middot; booking via WhatsApp</small></div>
+            <div class="t">Velour Beauty<small>Salon and academy &middot; booking via WhatsApp</small></div>
             <a class="go" href="https://velour-salon-kohl.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
         </article>
         <article class="wk reveal" data-cat="ecommerce" data-name="TimeCart">
           <figure><img src="project-timecart.jpg" alt="TimeCart e-commerce store homepage" loading="lazy" /></figure>
           <div class="meta">
-            <div class="t">TimeCart<small>Full-stack watch store &middot; React</small></div>
+            <div class="t">TimeCart<small>Watch store &middot; Next.js, Postgres, 23-table schema</small></div>
             <a class="go" href="https://timecart-hh5m.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
         </article>
         <article class="wk reveal" data-cat="ecommerce" data-name="Corals by Tabassum">
           <figure><img src="project-corals.jpg" alt="Corals by Tabassum jewellery store homepage" loading="lazy" /></figure>
           <div class="meta">
-            <div class="t">Corals by Tabassum<small>Full-stack jewellery store &middot; cream &amp; rose-gold</small></div>
+            <div class="t">Corals by Tabassum<small>Jewellery store &middot; rebuilt on the TimeCart engine</small></div>
             <a class="go" href="https://corals-by-tabassum.vercel.app" target="_blank" rel="noopener">Visit &rarr;</a>
           </div>
         </article>
@@ -573,10 +596,9 @@ textarea:focus{outline:none;border-color:var(--acc)}
       <h2 class="cv-head reveal">Core <span class="ac">Vision</span></h2>
       <div class="cv-grid">
         <div class="cv-copy reveal">
-          <p><strong>Satti Studio is a one-person design-and-code practice</strong> built on a simple belief: a website is not a decoration &mdash; it is the hardest-working salesperson a business can hire.</p>
-          <p>I build every project end to end myself &mdash; planning, design, development, testing and launch. My approach goes beyond the usual client&ndash;developer relationship: every build starts on WhatsApp, stays honest, and keeps working after launch.</p>
-          <p>Every page I ship is mobile-first, fast and tuned to capture leads &mdash; because in Pakistan, your customer finds you on their phone first. I test every build on real devices before you ever see it.</p>
-          <p class="cv-ital">&ldquo;Let&rsquo;s challenge conventions and build what&rsquo;s next for your business.&rdquo;</p>
+          <p><strong>Satti Studio is one person doing the whole job.</strong> You brief me, I design it, I code it, I put it online. Nothing gets lost between a designer, a developer and an account manager, because there isn&rsquo;t one.</p>
+          <p>Most sites built for businesses here start from a template, so the layout can&rsquo;t change when you ask for something different. Mine are written from scratch. That takes longer than dragging a block onto a canvas, and it is the reason I can change anything for you later without starting over.</p>
+          <p>Every build gets a WhatsApp button instead of a contact form, because in Pakistan most people would rather send one message than fill in a form. I set up the domain, write the copy, and I can walk you through editing the site yourself afterwards.</p>
         </div>
         <figure class="cv-photo reveal">
           <img src="me.jpg" alt="Abdul Rehman Satti, founder of Satti Studio" referrerpolicy="no-referrer" />
@@ -584,9 +606,9 @@ textarea:focus{outline:none;border-color:var(--acc)}
         </figure>
       </div>
       <div class="cv-stats reveal">
-        <div><div class="num">9</div><div class="lab">Live demo builds</div></div>
-        <div><div class="num">5</div><div class="lab">Days avg. delivery</div></div>
-        <div><div class="num">100%</div><div class="lab">WhatsApp-first workflow</div></div>
+        <div><div class="num">10</div><div class="lab">Live demo builds</div></div>
+        <div><div class="num">2</div><div class="lab">Working stores, cart to admin</div></div>
+        <div><div class="num">0</div><div class="lab">Templates used</div></div>
       </div>
     </div>
   </section>
@@ -595,11 +617,11 @@ textarea:focus{outline:none;border-color:var(--acc)}
   <section class="sec" id="sectors" style="padding-top:clamp(50px,7vw,90px);padding-bottom:clamp(50px,7vw,90px)">
     <div class="mq mq-rev" aria-hidden="true">
       <div class="mq-in">
-        <span>Restaurants <i>&#10035;</i></span><span>Beauty salons <i>&#10035;</i></span><span>Gyms &amp; fitness <i>&#10035;</i></span><span>Clinics <i>&#10035;</i></span><span>Schools &amp; academies <i>&#10035;</i></span><span>Real estate <i>&#10035;</i></span><span>Retail <i>&#10035;</i></span><span>E-commerce <i>&#10035;</i></span>
-        <span>Restaurants <i>&#10035;</i></span><span>Beauty salons <i>&#10035;</i></span><span>Gyms &amp; fitness <i>&#10035;</i></span><span>Clinics <i>&#10035;</i></span><span>Schools &amp; academies <i>&#10035;</i></span><span>Real estate <i>&#10035;</i></span><span>Retail <i>&#10035;</i></span><span>E-commerce <i>&#10035;</i></span>
+        <span>Restaurants <i>&#10035;</i></span><span>Beauty salons <i>&#10035;</i></span><span>Gyms &amp; fitness <i>&#10035;</i></span><span>Clinics <i>&#10035;</i></span><span>Schools &amp; academies <i>&#10035;</i></span><span>Real estate <i>&#10035;</i></span><span>E-commerce <i>&#10035;</i></span>
+        <span>Restaurants <i>&#10035;</i></span><span>Beauty salons <i>&#10035;</i></span><span>Gyms &amp; fitness <i>&#10035;</i></span><span>Clinics <i>&#10035;</i></span><span>Schools &amp; academies <i>&#10035;</i></span><span>Real estate <i>&#10035;</i></span><span>E-commerce <i>&#10035;</i></span>
       </div>
     </div>
-    <p class="sec-note">Every niche. One standard: mobile-perfect and built to win customers.</p>
+    <p class="sec-note">Seven kinds of business so far. The same standard in every one.</p>
   </section>
 
   <!-- TOOLKIT -->
@@ -607,7 +629,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
     <div class="wrap">
       <div class="tk-head reveal">
         <h2 class="giant">The Stack</h2>
-        <span class="sub">tools I actually ship with.</span>
+        <span class="sub">what the builds above are made of.</span>
       </div>
       <div class="tk-grid reveal">
         <div class="tk"><span class="n">[01]</span><b>HTML5</b></div>
@@ -623,9 +645,8 @@ textarea:focus{outline:none;border-color:var(--acc)}
         <div class="tk"><span class="n">[11]</span><b>Git &amp; GitHub</b></div>
         <div class="tk"><span class="n">[12]</span><b>Vercel</b></div>
         <div class="tk"><span class="n">[13]</span><b>REST APIs</b></div>
-        <div class="tk"><span class="n">[14]</span><b>SEO basics</b></div>
-        <div class="tk"><span class="n">[15]</span><b>Figma slices</b></div>
-        <div class="tk"><span class="n">[16]</span><b>WhatsApp Business</b></div>
+        <div class="tk"><span class="n">[14]</span><b>SEO &amp; metadata</b></div>
+        <div class="tk"><span class="n">[15]</span><b>WhatsApp links</b></div>
       </div>
     </div>
   </section>
@@ -636,7 +657,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
       <div class="kick">
         <div class="reveal">
           <h2 class="giant">Let&rsquo;s kick off<span class="serif2">your project today.</span></h2>
-          <p class="hero-lead" style="max-width:none">Tell me what you&rsquo;re building. You&rsquo;ll get an honest answer, a clear price and a live website &mdash; all on WhatsApp. No meetings, no email chains, no commitment.</p>
+          <p class="hero-lead" style="max-width:none">Tell me what you&rsquo;re building and I&rsquo;ll tell you honestly whether I&rsquo;m the right person for it. Straight answers, a clear price, and a live website at the end of it.</p>
         </div>
         <div class="col-r reveal">
           <div class="email-row">
@@ -649,7 +670,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
           </div>
           <div class="email-row">
             <div class="k">Based in</div>
-            <div class="vv">Rawalpindi, Pakistan &middot; serving clients nationwide</div>
+            <div class="vv">Rawalpindi, Pakistan &middot; working remotely</div>
           </div>
           <div class="kick-cta">
             <a class="kickbtn" href="#" data-open-quote>Get free quote <span class="arr" aria-hidden="true">&rarr;</span></a>
@@ -693,7 +714,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
 
     <div class="bld-sec">
       <div class="mod-legend">Extra pages (business websites)</div>
-      <div class="stepper">
+      <div class="stepper" id="stepper">
         <button type="button" id="decPages" aria-label="Remove an extra page">&minus;</button>
         <span class="pagesCnt" id="pagesCount" aria-live="polite">0</span>
         <button type="button" id="incPages" aria-label="Add an extra page">+</button>
@@ -789,6 +810,7 @@ textarea:focus{outline:none;border-color:var(--acc)}
   const P = { landing: 12000, business: 25000, ecommerce: 60000 };
   const PNAME = { landing: "Landing page", business: "Business website", ecommerce: "E-commerce store" };
   const PPAGE = { landing: "1 page", business: "5 pages", ecommerce: "Full store + admin" };
+  const P_DAYS = { landing: "2–3 days", business: "3–5 days", ecommerce: "7–10 days" };
   const EXTRA = 3500;
 
   function curType() { const t = typeEls.find((r) => r.checked); return t ? t.value : "business"; }
@@ -796,7 +818,14 @@ textarea:focus{outline:none;border-color:var(--acc)}
   function pagesCost() { return curType() === "business" ? pages * EXTRA : 0; }
   function addonsCost() { return addonEls.filter((a) => a.checked).reduce((s, a) => s + Number(a.dataset.price), 0); }
   function total() { return base() + pagesCost() + addonsCost(); }
-  function render() { sumTotal.textContent = fmt(total()); }
+  function render() {
+    sumTotal.textContent = fmt(total());
+    // Extra pages only apply to business websites — hide the control instead of
+    // letting it look live while silently doing nothing.
+    const biz = curType() === "business";
+    document.getElementById("stepper").hidden = !biz;
+    if (!biz && pages > 0) { pages = 0; pagesCount.textContent = "0"; sumTotal.textContent = fmt(total()); }
+  }
   typeEls.forEach((r) => r.addEventListener("change", render));
   addonEls.forEach((a) => a.addEventListener("change", render));
   document.getElementById("incPages").addEventListener("click", () => { pages++; pagesCount.textContent = pages; render(); });
@@ -805,17 +834,23 @@ textarea:focus{outline:none;border-color:var(--acc)}
   function buildMsg() {
     const L = [];
     L.push("Website quote request for Satti Studio:");
-    L.push("• " + PNAME[curType()] + " — " + fmt(base()) + " (" + PPAGE[curType()] + ")");
+    L.push("• " + PNAME[curType()] + " — " + fmt(base()) + " (" + PPAGE[curType()] + ", usually " + P_DAYS[curType()] + ")");
     if (pagesCost() > 0) L.push("• Extra pages ×" + pages + " — " + fmt(pagesCost()));
     addonEls.filter((a) => a.checked).forEach((a) => L.push("• " + a.dataset.label + " — " + fmt(Number(a.dataset.price))));
     L.push("Total: " + fmt(total()));
     const extra = quoteMsg.value.trim();
     if (extra) L.push("\n" + extra);
-    L.push("\nPlease send me my free plan.");
+    L.push("\nPlease send me my free quote.");
     return encodeURIComponent(L.join("\n"));
   }
   function openQuote() {
     quoteMsg.value = "";
+    // Reset per-build state: a reopened quote must not carry the previous
+    // extra-page count or add-ons into a new total.
+    pages = 0;
+    pagesCount.textContent = "0";
+    addonEls.forEach((a) => { a.checked = false; });
+    render();
     modal.classList.add("open");
     qClose.focus();
     document.body.style.overflow = "hidden";
